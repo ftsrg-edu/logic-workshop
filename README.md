@@ -1,4 +1,6 @@
-logic-workshop
-==============
+FTSRG demó:
 
-FTSRG logic workshop
+* logikai feladványok megoldása
+* solverek
+* szakterület-specifikus nyelv készítése Xtexttel
+* transzformáció készítése Xtenddel

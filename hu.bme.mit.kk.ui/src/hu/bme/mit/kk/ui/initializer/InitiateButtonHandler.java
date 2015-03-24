@@ -1,4 +1,4 @@
-package hu.bme.mit.inf.dsl2smt2.parameterization.initialiser;
+package hu.bme.mit.kk.ui.initializer;
 
 import hu.bme.mit.kk.KKSolver;
 import hu.bme.mit.kk.dsl.language.Model;

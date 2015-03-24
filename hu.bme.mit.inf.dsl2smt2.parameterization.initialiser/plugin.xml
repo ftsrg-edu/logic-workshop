@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="hu.bme.mit.inf.dsl2smt2.parameterization.initialiser"
+            name="name">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="hu.bme.mit.inf.dsl2smt2.parameterization.initialiser.toolbar1">
+            <command
+                  commandId="hu.bme.mit.inf.dsl2smt2.parameterization.initialiser"
+                  icon="icon/favicon.ico"
+                  label="DSL &lt;-&gt; SMT"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="hu.bme.mit.inf.dsl2smt2.parameterization.initialiser.InitiateButtonHandler"
+            commandId="hu.bme.mit.inf.dsl2smt2.parameterization.initialiser">
+      </handler>
+   </extension>
+
+</plugin>

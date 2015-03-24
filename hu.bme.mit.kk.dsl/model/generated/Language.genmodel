@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.kk.dsl/src-gen" editDirectory="/hu.bme.mit.kk.dsl.edit/src"
+    editorDirectory="/hu.bme.mit.kk.dsl.editor/src" modelPluginID="hu.bme.mit.kk.dsl"
+    forceOverwrite="true" modelName="Language" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="hu.bme.mit.kk.dsl.edit"
+    editorPluginID="hu.bme.mit.kk.dsl.editor" runtimeVersion="2.10">
+  <genPackages prefix="Language" basePackage="hu.bme.mit.kk.dsl" disposableProviderFactory="true"
+      fileExtensions="kk" ecorePackage="Language.ecore#/">
+    <genClasses ecoreClass="Language.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Model/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Model/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Language.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//Statement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//Statement/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Statement/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//Expression"/>
+    <genClasses ecoreClass="Language.ecore#//Iff">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Iff/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Iff/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//Negation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Negation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//VariableReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//VariableReference/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

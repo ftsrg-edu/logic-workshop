@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.kk.dsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: hu.bme.mit.kk.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: hu.bme.mit.kk.dsl,
+ hu.bme.mit.kk.dsl.services,
+ hu.bme.mit.kk.dsl.language,
+ hu.bme.mit.kk.dsl.language.impl,
+ hu.bme.mit.kk.dsl.language.util,
+ hu.bme.mit.kk.dsl.serializer,
+ hu.bme.mit.kk.dsl.parser.antlr,
+ hu.bme.mit.kk.dsl.parser.antlr.internal,
+ hu.bme.mit.kk.dsl.validation,
+ hu.bme.mit.kk.dsl.scoping,
+ hu.bme.mit.kk.dsl.generator,
+ hu.bme.mit.kk.dsl.formatting

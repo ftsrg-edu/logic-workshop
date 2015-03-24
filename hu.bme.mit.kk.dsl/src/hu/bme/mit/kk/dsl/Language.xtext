@@ -1,0 +1,35 @@
+grammar hu.bme.mit.kk.dsl.Language with org.eclipse.xtext.common.Terminals
+
+generate language "http://www.bme.hu/mit/kk/dsl/Language"
+
+Model:
+	variables+=Variable (',' variables+=Variable)*
+	statements+=(Statement)+;
+
+Variable:
+	name=ID;
+
+Statement:
+	variable=[Variable] ':' expression=Expression;
+
+Expression:
+	Iff;
+
+Iff returns Expression:
+	Or ({Iff.left=current} '==' right=Or)?;
+
+Or returns Expression:
+	And ({Or.left=current} '||' right=And)*;
+
+And returns Expression:
+	Negation ({And.left=current} '&&' right=Negation)*;
+
+Negation returns Expression:
+	'!' {Negation} value=Primary | Primary;
+
+Primary returns Expression:
+	VariableReference |
+	'(' Or ')';
+
+VariableReference returns Expression:
+	{VariableReference} value=[Variable];

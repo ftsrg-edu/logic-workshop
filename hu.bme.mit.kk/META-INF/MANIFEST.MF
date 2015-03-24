@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Kk
+Bundle-SymbolicName: hu.bme.mit.kk
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: kk.jar,
+ lib/choco-solver-3.3.0-with-dependencies.jar
+Require-Bundle: hu.bme.mit.kk.dsl;bundle-version="1.0.0"
+Export-Package: hu.bme.mit.kk

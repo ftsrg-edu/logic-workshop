@@ -61,14 +61,14 @@ public class InitiateButtonHandler extends AbstractHandler {
 	}
 
 	/**
-	 * Static method that shows an error message to the user
+	 * Static method that shows a message dialog to the user
 	 * 
 	 * @param errorMessage
 	 */
 	public static void showInformationMessage(String errorMessage) {
-		MessageDialog messageDialog = new MessageDialog(null,
-				"", null, errorMessage,
-				MessageDialog.INFORMATION, new String[] { "Ok" }, 0);
+		MessageDialog messageDialog = new MessageDialog(null, "", null,
+				errorMessage, MessageDialog.INFORMATION, new String[] { "Ok" },
+				0);
 		messageDialog.open();
 	}
 }

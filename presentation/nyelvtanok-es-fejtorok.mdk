@@ -36,11 +36,11 @@ ldquo         : &bdquo;
 ### 2. feladvány
 
 ~ Begin Framed
-Tegyük fel, hogy A ezt mondja: 
+Tegyük fel, hogy **A** ezt mondja: 
 
-"Lókötő vagyok, vagy B lovag."
+"Lókötő vagyok, vagy **B** lovag."
 
-*Miféle A, ill. B?*
+Miféle **A**, ill. **B**?
 ~ End Framed
 
 ## Logikai alapműveletek
@@ -109,9 +109,9 @@ $A$ igaz és $B$ hamis, tehát **A** lovag és **B** lókötő.
 <!-- Smullyan 29. feladat -->
 
 ~ Begin Framed
-Tegyük fel, hogy A ezt mondja: 
+Tegyük fel, hogy **A** ezt mondja: 
 
-"Lókötő vagyok, vagy B lovag."
+"Lókötő vagyok, vagy **B** lovag."
 
 Miféle A, ill. B?
 ~ End Framed

@@ -5,6 +5,7 @@ Author        : Debreceni Csaba, Semeráth Oszkár, Szárnyas Gábor, Varró Dá
 Affiliation   : Hibatűrő Rendszerek Kutatócsoport
 Reveal Theme  : simple
 MathJax       : https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+ldquo         : &bdquo;
 
 [TITLE]
 
@@ -27,16 +28,17 @@ MathJax       : https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS
 
 ### 1. feladvány
 
+
 ~ Begin Framed
-*"A" a következőt állítja: "Legalább egyikünk lókötő".*
+"**A**" a következőt állítja: "Legalább egyikünk lókötő".
 ~ End Framed
 
 ### 2. feladvány
 
 ~ Begin Framed
-*Tegyük fel, hogy A ezt mondja:* 
+Tegyük fel, hogy A ezt mondja: 
 
-*"Lókötő vagyok, vagy B lovag."*
+"Lókötő vagyok, vagy B lovag."
 
 *Miféle A, ill. B?*
 ~ End Framed
@@ -55,13 +57,13 @@ MathJax       : https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS
 <!-- Smullyan 28. feladat -->
 
 ~ Begin Framed
-*"A" a következőt állítja: "Legalább egyikünk lókötő".*
+"**A**" a következőt állítja: "Legalább egyikünk lókötő".
 ~ End Framed
 
 ## 1. feladvány (megoldás) {#vertical}
 
 ~ Begin Framed
-*"A" a következőt állítja: "Legalább egyikünk lókötő".*
+"**A**" a következőt állítja: "Legalább egyikünk lókötő".
 ~ End Framed
 
 Legyen az $A$ predikátum igaz, ha **A** lovag és $B$ igaz, ha **B** lovag.
@@ -107,24 +109,24 @@ $A$ igaz és $B$ hamis, tehát **A** lovag és **B** lókötő.
 <!-- Smullyan 29. feladat -->
 
 ~ Begin Framed
-*Tegyük fel, hogy A ezt mondja:* 
+Tegyük fel, hogy A ezt mondja: 
 
-*"Lókötő vagyok, vagy B lovag."*
+"Lókötő vagyok, vagy B lovag."
 
-*Miféle A, ill. B?*
+Miféle A, ill. B?
 ~ End Framed
 
 ## 2. feladvány (megoldás) {#vertical}
 
 ~ Begin Framed
-*Tegyük fel, hogy A ezt mondja:* 
+Tegyük fel, hogy **A** ezt mondja: 
 
-*"Lókötő vagyok, vagy B lovag."*
+"Lókötő vagyok, vagy **B** lovag."
 
-*Miféle A, ill. B?*
+Miféle **A**, ill. **B**?
 ~ End Framed
 
-*A* mondata formálisan:
+**A** mondata formálisan:
 
 ~ Equation {#f2-allitas}
 \neg A \vee B
@@ -163,13 +165,13 @@ $A$ igaz és $B$ igaz, tehát **A** és **B** mindketten lovagok.
 <!-- Smullyan 33. feladat -->
 
 ~ Begin Framed
-*A: Én lókötő vagyok, de B nem az.*
+**A**: Én lókötő vagyok, de **B** nem az.
 ~ End Framed
 
 ## 3. feladvány (megoldás)  {#vertical}
 
 ~ Begin Framed
-*A: Én lókötő vagyok, de B nem az.*
+**A**: Én lókötő vagyok, de **B** nem az.
 ~ End Framed
 
 ~ Equation
@@ -191,17 +193,17 @@ $A$ igaz és $B$ igaz, tehát **A** és **B** mindketten lovagok.
 <!-- Smullyan 31. feladat -->
 
 ~ Begin Framed
-* *A: Mindnyájan lókötők vagyunk.*
-* *B: Pontosan egy lovag van köztünk.*
-* *Miféle A, B és C?*
+* **A**: Mindnyájan lókötők vagyunk.
+* **B**: Pontosan egy lovag van köztünk.
+* Miféle **A**, **B** és **C**?
 ~ End Framed
 
 ## 4. feladvány (megoldás)
 
 ~ Begin Framed
-* *A: Mindnyájan lókötők vagyunk.*
-* *B: Pontosan egy lovag van köztünk.*
-* *Miféle A, B és C?*
+* **A**: Mindnyájan lókötők vagyunk.
+* **B**: Pontosan egy lovag van köztünk.
+* Miféle **A**, **B** és **C**?
 ~ End Framed
 
 * A: $ \neg A \wedge \neg B \wedge \neg C $

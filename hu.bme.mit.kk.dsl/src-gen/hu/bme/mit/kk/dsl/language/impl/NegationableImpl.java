@@ -4,7 +4,7 @@ package hu.bme.mit.kk.dsl.language.impl;
 
 import hu.bme.mit.kk.dsl.language.Expression;
 import hu.bme.mit.kk.dsl.language.LanguagePackage;
-import hu.bme.mit.kk.dsl.language.Negation;
+import hu.bme.mit.kk.dsl.language.Negationable;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Negation</b></em>'.
+ * An implementation of the model object '<em><b>Negationable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.impl.NegationImpl#getValue <em>Value</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.impl.NegationableImpl#getValue <em>Value</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class NegationImpl extends ExpressionImpl implements Negation
+public class NegationableImpl extends ExpressionImpl implements Negationable
 {
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -44,7 +44,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NegationImpl()
+  protected NegationableImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
   @Override
   protected EClass eStaticClass()
   {
-    return LanguagePackage.Literals.NEGATION;
+    return LanguagePackage.Literals.NEGATIONABLE;
   }
 
   /**
@@ -81,7 +81,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
     value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LanguagePackage.NEGATION__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LanguagePackage.NEGATIONABLE__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -98,14 +98,14 @@ public class NegationImpl extends ExpressionImpl implements Negation
     {
       NotificationChain msgs = null;
       if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LanguagePackage.NEGATION__VALUE, null, msgs);
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LanguagePackage.NEGATIONABLE__VALUE, null, msgs);
       if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LanguagePackage.NEGATION__VALUE, null, msgs);
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LanguagePackage.NEGATIONABLE__VALUE, null, msgs);
       msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.NEGATION__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.NEGATIONABLE__VALUE, newValue, newValue));
   }
 
   /**
@@ -118,7 +118,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
   {
     switch (featureID)
     {
-      case LanguagePackage.NEGATION__VALUE:
+      case LanguagePackage.NEGATIONABLE__VALUE:
         return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -134,7 +134,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
   {
     switch (featureID)
     {
-      case LanguagePackage.NEGATION__VALUE:
+      case LanguagePackage.NEGATIONABLE__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -150,7 +150,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
   {
     switch (featureID)
     {
-      case LanguagePackage.NEGATION__VALUE:
+      case LanguagePackage.NEGATIONABLE__VALUE:
         setValue((Expression)newValue);
         return;
     }
@@ -167,7 +167,7 @@ public class NegationImpl extends ExpressionImpl implements Negation
   {
     switch (featureID)
     {
-      case LanguagePackage.NEGATION__VALUE:
+      case LanguagePackage.NEGATIONABLE__VALUE:
         setValue((Expression)null);
         return;
     }
@@ -184,10 +184,10 @@ public class NegationImpl extends ExpressionImpl implements Negation
   {
     switch (featureID)
     {
-      case LanguagePackage.NEGATION__VALUE:
+      case LanguagePackage.NEGATIONABLE__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //NegationImpl
+} //NegationableImpl

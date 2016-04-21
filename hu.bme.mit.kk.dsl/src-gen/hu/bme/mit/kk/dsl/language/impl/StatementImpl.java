@@ -4,8 +4,8 @@ package hu.bme.mit.kk.dsl.language.impl;
 
 import hu.bme.mit.kk.dsl.language.Expression;
 import hu.bme.mit.kk.dsl.language.LanguagePackage;
+import hu.bme.mit.kk.dsl.language.Person;
 import hu.bme.mit.kk.dsl.language.Statement;
-import hu.bme.mit.kk.dsl.language.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,25 +22,25 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.impl.StatementImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.impl.StatementImpl#getPerson <em>Person</em>}</li>
  *   <li>{@link hu.bme.mit.kk.dsl.language.impl.StatementImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
   /**
-   * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
+   * The cached value of the '{@link #getPerson() <em>Person</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariable()
+   * @see #getPerson()
    * @generated
    * @ordered
    */
-  protected Variable variable;
+  protected Person person;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -78,19 +78,19 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable getVariable()
+  public Person getPerson()
   {
-    if (variable != null && variable.eIsProxy())
+    if (person != null && person.eIsProxy())
     {
-      InternalEObject oldVariable = (InternalEObject)variable;
-      variable = (Variable)eResolveProxy(oldVariable);
-      if (variable != oldVariable)
+      InternalEObject oldPerson = (InternalEObject)person;
+      person = (Person)eResolveProxy(oldPerson);
+      if (person != oldPerson)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LanguagePackage.STATEMENT__VARIABLE, oldVariable, variable));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LanguagePackage.STATEMENT__PERSON, oldPerson, person));
       }
     }
-    return variable;
+    return person;
   }
 
   /**
@@ -98,9 +98,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable basicGetVariable()
+  public Person basicGetPerson()
   {
-    return variable;
+    return person;
   }
 
   /**
@@ -108,12 +108,12 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(Variable newVariable)
+  public void setPerson(Person newPerson)
   {
-    Variable oldVariable = variable;
-    variable = newVariable;
+    Person oldPerson = person;
+    person = newPerson;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STATEMENT__VARIABLE, oldVariable, variable));
+      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.STATEMENT__PERSON, oldPerson, person));
   }
 
   /**
@@ -190,9 +190,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case LanguagePackage.STATEMENT__VARIABLE:
-        if (resolve) return getVariable();
-        return basicGetVariable();
+      case LanguagePackage.STATEMENT__PERSON:
+        if (resolve) return getPerson();
+        return basicGetPerson();
       case LanguagePackage.STATEMENT__EXPRESSION:
         return getExpression();
     }
@@ -209,8 +209,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case LanguagePackage.STATEMENT__VARIABLE:
-        setVariable((Variable)newValue);
+      case LanguagePackage.STATEMENT__PERSON:
+        setPerson((Person)newValue);
         return;
       case LanguagePackage.STATEMENT__EXPRESSION:
         setExpression((Expression)newValue);
@@ -229,8 +229,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case LanguagePackage.STATEMENT__VARIABLE:
-        setVariable((Variable)null);
+      case LanguagePackage.STATEMENT__PERSON:
+        setPerson((Person)null);
         return;
       case LanguagePackage.STATEMENT__EXPRESSION:
         setExpression((Expression)null);
@@ -249,8 +249,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case LanguagePackage.STATEMENT__VARIABLE:
-        return variable != null;
+      case LanguagePackage.STATEMENT__PERSON:
+        return person != null;
       case LanguagePackage.STATEMENT__EXPRESSION:
         return expression != null;
     }

@@ -5,14 +5,15 @@ package hu.bme.mit.kk.dsl.language.impl;
 import hu.bme.mit.kk.dsl.language.And;
 import hu.bme.mit.kk.dsl.language.Expression;
 import hu.bme.mit.kk.dsl.language.Iff;
+import hu.bme.mit.kk.dsl.language.KnaveReference;
+import hu.bme.mit.kk.dsl.language.KnightReference;
 import hu.bme.mit.kk.dsl.language.LanguageFactory;
 import hu.bme.mit.kk.dsl.language.LanguagePackage;
 import hu.bme.mit.kk.dsl.language.Model;
-import hu.bme.mit.kk.dsl.language.Negation;
+import hu.bme.mit.kk.dsl.language.Negationable;
 import hu.bme.mit.kk.dsl.language.Or;
+import hu.bme.mit.kk.dsl.language.Person;
 import hu.bme.mit.kk.dsl.language.Statement;
-import hu.bme.mit.kk.dsl.language.Variable;
-import hu.bme.mit.kk.dsl.language.VariableReference;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -41,7 +42,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variableEClass = null;
+  private EClass personEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,14 +84,21 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass negationEClass = null;
+  private EClass negationableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variableReferenceEClass = null;
+  private EClass knightReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass knaveReferenceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -170,7 +178,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Variables()
+  public EReference getModel_People()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -190,9 +198,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariable()
+  public EClass getPerson()
   {
-    return variableEClass;
+    return personEClass;
   }
 
   /**
@@ -200,9 +208,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_Name()
+  public EAttribute getPerson_Name()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)personEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -220,7 +228,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Variable()
+  public EReference getStatement_Person()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(0);
   }
@@ -340,9 +348,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNegation()
+  public EClass getNegationable()
   {
-    return negationEClass;
+    return negationableEClass;
   }
 
   /**
@@ -350,9 +358,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNegation_Value()
+  public EReference getNegationable_Value()
   {
-    return (EReference)negationEClass.getEStructuralFeatures().get(0);
+    return (EReference)negationableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -360,9 +368,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableReference()
+  public EClass getKnightReference()
   {
-    return variableReferenceEClass;
+    return knightReferenceEClass;
   }
 
   /**
@@ -370,9 +378,29 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableReference_Value()
+  public EReference getKnightReference_Person()
   {
-    return (EReference)variableReferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)knightReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getKnaveReference()
+  {
+    return knaveReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getKnaveReference_Person()
+  {
+    return (EReference)knaveReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -406,14 +434,14 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__VARIABLES);
+    createEReference(modelEClass, MODEL__PEOPLE);
     createEReference(modelEClass, MODEL__STATEMENTS);
 
-    variableEClass = createEClass(VARIABLE);
-    createEAttribute(variableEClass, VARIABLE__NAME);
+    personEClass = createEClass(PERSON);
+    createEAttribute(personEClass, PERSON__NAME);
 
     statementEClass = createEClass(STATEMENT);
-    createEReference(statementEClass, STATEMENT__VARIABLE);
+    createEReference(statementEClass, STATEMENT__PERSON);
     createEReference(statementEClass, STATEMENT__EXPRESSION);
 
     expressionEClass = createEClass(EXPRESSION);
@@ -430,11 +458,14 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
     createEReference(andEClass, AND__LEFT);
     createEReference(andEClass, AND__RIGHT);
 
-    negationEClass = createEClass(NEGATION);
-    createEReference(negationEClass, NEGATION__VALUE);
+    negationableEClass = createEClass(NEGATIONABLE);
+    createEReference(negationableEClass, NEGATIONABLE__VALUE);
 
-    variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
-    createEReference(variableReferenceEClass, VARIABLE_REFERENCE__VALUE);
+    knightReferenceEClass = createEClass(KNIGHT_REFERENCE);
+    createEReference(knightReferenceEClass, KNIGHT_REFERENCE__PERSON);
+
+    knaveReferenceEClass = createEClass(KNAVE_REFERENCE);
+    createEReference(knaveReferenceEClass, KNAVE_REFERENCE__PERSON);
   }
 
   /**
@@ -469,19 +500,20 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
     iffEClass.getESuperTypes().add(this.getExpression());
     orEClass.getESuperTypes().add(this.getExpression());
     andEClass.getESuperTypes().add(this.getExpression());
-    negationEClass.getESuperTypes().add(this.getExpression());
-    variableReferenceEClass.getESuperTypes().add(this.getExpression());
+    negationableEClass.getESuperTypes().add(this.getExpression());
+    knightReferenceEClass.getESuperTypes().add(this.getExpression());
+    knaveReferenceEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Variables(), this.getVariable(), null, "variables", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_People(), this.getPerson(), null, "people", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Statements(), this.getStatement(), null, "statements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStatement_Variable(), this.getVariable(), null, "variable", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_Person(), this.getPerson(), null, "person", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Expression(), this.getExpression(), null, "expression", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -498,11 +530,14 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
     initEReference(getAnd_Left(), this.getExpression(), null, "left", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAnd_Right(), this.getExpression(), null, "right", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(negationEClass, Negation.class, "Negation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNegation_Value(), this.getExpression(), null, "value", null, 0, 1, Negation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(negationableEClass, Negationable.class, "Negationable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNegationable_Value(), this.getExpression(), null, "value", null, 0, 1, Negationable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableReference_Value(), this.getVariable(), null, "value", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(knightReferenceEClass, KnightReference.class, "KnightReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getKnightReference_Person(), this.getPerson(), null, "person", null, 0, 1, KnightReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(knaveReferenceEClass, KnaveReference.class, "KnaveReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getKnaveReference_Person(), this.getPerson(), null, "person", null, 0, 1, KnaveReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

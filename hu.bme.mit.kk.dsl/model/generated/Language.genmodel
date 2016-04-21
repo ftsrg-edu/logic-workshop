@@ -3,19 +3,19 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.kk.dsl/src-gen" editDirectory="/hu.bme.mit.kk.dsl.edit/src"
     editorDirectory="/hu.bme.mit.kk.dsl.editor/src" modelPluginID="hu.bme.mit.kk.dsl"
     forceOverwrite="true" modelName="Language" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="hu.bme.mit.kk.dsl.edit"
-    editorPluginID="hu.bme.mit.kk.dsl.editor" runtimeVersion="2.10">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="hu.bme.mit.kk.dsl.edit"
+    editorPluginID="hu.bme.mit.kk.dsl.editor" runtimeVersion="2.11">
   <genPackages prefix="Language" basePackage="hu.bme.mit.kk.dsl" disposableProviderFactory="true"
       fileExtensions="kk" ecorePackage="Language.ecore#/">
     <genClasses ecoreClass="Language.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Model/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Model/people"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Model/statements"/>
     </genClasses>
-    <genClasses ecoreClass="Language.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Language.ecore#//Variable/name"/>
+    <genClasses ecoreClass="Language.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Language.ecore#//Person/name"/>
     </genClasses>
     <genClasses ecoreClass="Language.ecore#//Statement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//Statement/variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//Statement/person"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Statement/expression"/>
     </genClasses>
     <genClasses ecoreClass="Language.ecore#//Expression"/>
@@ -31,11 +31,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//And/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//And/right"/>
     </genClasses>
-    <genClasses ecoreClass="Language.ecore#//Negation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Negation/value"/>
+    <genClasses ecoreClass="Language.ecore#//Negationable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Language.ecore#//Negationable/value"/>
     </genClasses>
-    <genClasses ecoreClass="Language.ecore#//VariableReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//VariableReference/value"/>
+    <genClasses ecoreClass="Language.ecore#//KnightReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//KnightReference/person"/>
+    </genClasses>
+    <genClasses ecoreClass="Language.ecore#//KnaveReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Language.ecore#//KnaveReference/person"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

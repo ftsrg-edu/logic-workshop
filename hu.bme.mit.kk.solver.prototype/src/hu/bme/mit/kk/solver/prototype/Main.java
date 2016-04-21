@@ -5,6 +5,7 @@ import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.constraints.LogicalConstraintFactory;
 import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.VariableFactory;
+import org.chocosolver.util.ESat;
 
 public class Main {
 	public static void main(String[] args) {
@@ -20,8 +21,9 @@ public class Main {
 
 		if (solver.findSolution()) {
 			do {
-				System.out.println(a);
-				System.out.println(b);
+				System.out.println("Result");
+				System.out.println(a.getBooleanValue() == ESat.TRUE ? "A is a knight" : "A is a knave");
+				System.out.println(b.getBooleanValue() == ESat.TRUE ? "B is a knight" : "B is a knave");
 			} while (solver.nextSolution());
 		}
 	}

@@ -2,57 +2,48 @@
  */
 package hu.bme.mit.kk.dsl.language.impl;
 
+import hu.bme.mit.kk.dsl.language.KnaveReference;
 import hu.bme.mit.kk.dsl.language.LanguagePackage;
-import hu.bme.mit.kk.dsl.language.Variable;
+import hu.bme.mit.kk.dsl.language.Person;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable</b></em>'.
+ * An implementation of the model object '<em><b>Knave Reference</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.impl.VariableImpl#getName <em>Name</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.impl.KnaveReferenceImpl#getPerson <em>Person</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class VariableImpl extends MinimalEObjectImpl.Container implements Variable
+public class KnaveReferenceImpl extends ExpressionImpl implements KnaveReference
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getPerson() <em>Person</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getPerson()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected Person person;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariableImpl()
+  protected KnaveReferenceImpl()
   {
     super();
   }
@@ -65,7 +56,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   @Override
   protected EClass eStaticClass()
   {
-    return LanguagePackage.Literals.VARIABLE;
+    return LanguagePackage.Literals.KNAVE_REFERENCE;
   }
 
   /**
@@ -73,9 +64,19 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public Person getPerson()
   {
-    return name;
+    if (person != null && person.eIsProxy())
+    {
+      InternalEObject oldPerson = (InternalEObject)person;
+      person = (Person)eResolveProxy(oldPerson);
+      if (person != oldPerson)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LanguagePackage.KNAVE_REFERENCE__PERSON, oldPerson, person));
+      }
+    }
+    return person;
   }
 
   /**
@@ -83,12 +84,22 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public Person basicGetPerson()
   {
-    String oldName = name;
-    name = newName;
+    return person;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPerson(Person newPerson)
+  {
+    Person oldPerson = person;
+    person = newPerson;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.VARIABLE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.KNAVE_REFERENCE__PERSON, oldPerson, person));
   }
 
   /**
@@ -101,8 +112,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE__NAME:
-        return getName();
+      case LanguagePackage.KNAVE_REFERENCE__PERSON:
+        if (resolve) return getPerson();
+        return basicGetPerson();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +129,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE__NAME:
-        setName((String)newValue);
+      case LanguagePackage.KNAVE_REFERENCE__PERSON:
+        setPerson((Person)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +146,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE__NAME:
-        setName(NAME_EDEFAULT);
+      case LanguagePackage.KNAVE_REFERENCE__PERSON:
+        setPerson((Person)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,27 +163,10 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case LanguagePackage.KNAVE_REFERENCE__PERSON:
+        return person != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //VariableImpl
+} //KnaveReferenceImpl

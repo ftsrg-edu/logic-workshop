@@ -10,11 +10,11 @@ package hu.bme.mit.kk.dsl.language;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.kk.dsl.language.And#getLeft <em>Left</em>}</li>
  *   <li>{@link hu.bme.mit.kk.dsl.language.And#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getAnd()
  * @model

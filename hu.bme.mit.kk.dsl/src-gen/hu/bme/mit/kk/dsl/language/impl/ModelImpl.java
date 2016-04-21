@@ -4,8 +4,8 @@ package hu.bme.mit.kk.dsl.language.impl;
 
 import hu.bme.mit.kk.dsl.language.LanguagePackage;
 import hu.bme.mit.kk.dsl.language.Model;
+import hu.bme.mit.kk.dsl.language.Person;
 import hu.bme.mit.kk.dsl.language.Statement;
-import hu.bme.mit.kk.dsl.language.Variable;
 
 import java.util.Collection;
 
@@ -27,25 +27,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.impl.ModelImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.impl.ModelImpl#getPeople <em>People</em>}</li>
  *   <li>{@link hu.bme.mit.kk.dsl.language.impl.ModelImpl#getStatements <em>Statements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getPeople() <em>People</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getPeople()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Person> people;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -83,13 +83,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Person> getPeople()
   {
-    if (variables == null)
+    if (people == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, LanguagePackage.MODEL__VARIABLES);
+      people = new EObjectContainmentEList<Person>(Person.class, this, LanguagePackage.MODEL__PEOPLE);
     }
-    return variables;
+    return people;
   }
 
   /**
@@ -116,8 +116,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LanguagePackage.MODEL__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case LanguagePackage.MODEL__PEOPLE:
+        return ((InternalEList<?>)getPeople()).basicRemove(otherEnd, msgs);
       case LanguagePackage.MODEL__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
@@ -134,8 +134,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LanguagePackage.MODEL__VARIABLES:
-        return getVariables();
+      case LanguagePackage.MODEL__PEOPLE:
+        return getPeople();
       case LanguagePackage.MODEL__STATEMENTS:
         return getStatements();
     }
@@ -153,9 +153,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LanguagePackage.MODEL__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case LanguagePackage.MODEL__PEOPLE:
+        getPeople().clear();
+        getPeople().addAll((Collection<? extends Person>)newValue);
         return;
       case LanguagePackage.MODEL__STATEMENTS:
         getStatements().clear();
@@ -175,8 +175,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LanguagePackage.MODEL__VARIABLES:
-        getVariables().clear();
+      case LanguagePackage.MODEL__PEOPLE:
+        getPeople().clear();
         return;
       case LanguagePackage.MODEL__STATEMENTS:
         getStatements().clear();
@@ -195,8 +195,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LanguagePackage.MODEL__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case LanguagePackage.MODEL__PEOPLE:
+        return people != null && !people.isEmpty();
       case LanguagePackage.MODEL__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }

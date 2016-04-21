@@ -50,7 +50,7 @@ public class LanguageSwitch<T> extends Switch<T>
    * Checks whether this is a switch for the given package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @parameter ePackage the package in question.
+   * @param ePackage the package in question.
    * @return whether this is a switch for the given package.
    * @generated
    */
@@ -79,10 +79,10 @@ public class LanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LanguagePackage.VARIABLE:
+      case LanguagePackage.PERSON:
       {
-        Variable variable = (Variable)theEObject;
-        T result = caseVariable(variable);
+        Person person = (Person)theEObject;
+        T result = casePerson(person);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -124,19 +124,27 @@ public class LanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LanguagePackage.NEGATION:
+      case LanguagePackage.NEGATIONABLE:
       {
-        Negation negation = (Negation)theEObject;
-        T result = caseNegation(negation);
-        if (result == null) result = caseExpression(negation);
+        Negationable negationable = (Negationable)theEObject;
+        T result = caseNegationable(negationable);
+        if (result == null) result = caseExpression(negationable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LanguagePackage.VARIABLE_REFERENCE:
+      case LanguagePackage.KNIGHT_REFERENCE:
       {
-        VariableReference variableReference = (VariableReference)theEObject;
-        T result = caseVariableReference(variableReference);
-        if (result == null) result = caseExpression(variableReference);
+        KnightReference knightReference = (KnightReference)theEObject;
+        T result = caseKnightReference(knightReference);
+        if (result == null) result = caseExpression(knightReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LanguagePackage.KNAVE_REFERENCE:
+      {
+        KnaveReference knaveReference = (KnaveReference)theEObject;
+        T result = caseKnaveReference(knaveReference);
+        if (result == null) result = caseExpression(knaveReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,17 +169,17 @@ public class LanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Person</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Person</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariable(Variable object)
+  public T casePerson(Person object)
   {
     return null;
   }
@@ -257,33 +265,49 @@ public class LanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Negation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Negationable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Negation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Negationable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNegation(Negation object)
+  public T caseNegationable(Negationable object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Knight Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Knight Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableReference(VariableReference object)
+  public T caseKnightReference(KnightReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Knave Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Knave Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseKnaveReference(KnaveReference object)
   {
     return null;
   }

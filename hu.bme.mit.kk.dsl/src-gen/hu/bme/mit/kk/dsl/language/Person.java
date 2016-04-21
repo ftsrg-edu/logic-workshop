@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Variable</b></em>'.
+ * A representation of the model object '<em><b>Person</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.Variable#getName <em>Name</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.Person#getName <em>Name</em>}</li>
+ * </ul>
  *
- * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getVariable()
+ * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getPerson()
  * @model
  * @generated
  */
-public interface Variable extends EObject
+public interface Person extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Variable extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getVariable_Name()
+   * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getPerson_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.kk.dsl.language.Variable#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.kk.dsl.language.Person#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface Variable extends EObject
    */
   void setName(String value);
 
-} // Variable
+} // Person

@@ -65,14 +65,15 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
     switch (eClass.getClassifierID())
     {
       case LanguagePackage.MODEL: return createModel();
-      case LanguagePackage.VARIABLE: return createVariable();
+      case LanguagePackage.PERSON: return createPerson();
       case LanguagePackage.STATEMENT: return createStatement();
       case LanguagePackage.EXPRESSION: return createExpression();
       case LanguagePackage.IFF: return createIff();
       case LanguagePackage.OR: return createOr();
       case LanguagePackage.AND: return createAnd();
-      case LanguagePackage.NEGATION: return createNegation();
-      case LanguagePackage.VARIABLE_REFERENCE: return createVariableReference();
+      case LanguagePackage.NEGATIONABLE: return createNegationable();
+      case LanguagePackage.KNIGHT_REFERENCE: return createKnightReference();
+      case LanguagePackage.KNAVE_REFERENCE: return createKnaveReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -94,10 +95,10 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable createVariable()
+  public Person createPerson()
   {
-    VariableImpl variable = new VariableImpl();
-    return variable;
+    PersonImpl person = new PersonImpl();
+    return person;
   }
 
   /**
@@ -160,10 +161,10 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Negation createNegation()
+  public Negationable createNegationable()
   {
-    NegationImpl negation = new NegationImpl();
-    return negation;
+    NegationableImpl negationable = new NegationableImpl();
+    return negationable;
   }
 
   /**
@@ -171,10 +172,21 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference createVariableReference()
+  public KnightReference createKnightReference()
   {
-    VariableReferenceImpl variableReference = new VariableReferenceImpl();
-    return variableReference;
+    KnightReferenceImpl knightReference = new KnightReferenceImpl();
+    return knightReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public KnaveReference createKnaveReference()
+  {
+    KnaveReferenceImpl knaveReference = new KnaveReferenceImpl();
+    return knaveReference;
   }
 
   /**

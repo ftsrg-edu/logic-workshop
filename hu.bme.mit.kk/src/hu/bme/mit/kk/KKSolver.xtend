@@ -4,30 +4,32 @@ import com.google.common.collect.Maps
 import hu.bme.mit.kk.dsl.language.And
 import hu.bme.mit.kk.dsl.language.Iff
 import hu.bme.mit.kk.dsl.language.Model
-import hu.bme.mit.kk.dsl.language.Negation
+import hu.bme.mit.kk.dsl.language.Negationable
 import hu.bme.mit.kk.dsl.language.Or
-import hu.bme.mit.kk.dsl.language.Variable
-import hu.bme.mit.kk.dsl.language.VariableReference
 import org.chocosolver.solver.Solver
 import org.chocosolver.solver.constraints.Constraint
 import org.chocosolver.solver.variables.BoolVar
 import org.chocosolver.solver.variables.VariableFactory
 
 import static org.chocosolver.solver.constraints.LogicalConstraintFactory.*
+import hu.bme.mit.kk.dsl.language.Person
+import hu.bme.mit.kk.dsl.language.KnightReference
+import hu.bme.mit.kk.dsl.language.KnaveReference
+import org.chocosolver.util.ESat
 
 class KKSolver {
 
-	val variableMapping = Maps.<Variable, BoolVar>newHashMap
+	val variableMapping = Maps.<Person, BoolVar>newHashMap
 
 	public def solve(Model model) {
 		val solver = new Solver
 
-		model.variables.forEach [
+		model.people.forEach [
 			variableMapping.put(it, VariableFactory.bool(it.name, solver))
 		]
 
 		model.statements.forEach [
-			ifOnlyIf(variableMapping.get(it.variable), it.expression.transform)
+			ifOnlyIf(variableMapping.get(it.person), it.expression.transform)
 		]
 
 		var result = '''
@@ -37,7 +39,7 @@ class KKSolver {
 
 		if (solver.findSolution()) {
 			do {
-				result = result.concat("\n" + model.variables.map[variableMapping.get(it)].map[it.toString])
+				result = result.concat("\n" + model.people.map[it.getName + variableMapping.get(it).booleanValue.prettyprint])
 			} while (solver.nextSolution)
 		}
 		result
@@ -64,12 +66,24 @@ class KKSolver {
 		)
 	}
 
-	public dispatch def Constraint transform(Negation not) {
+	public dispatch def Constraint transform(Negationable not) {
 		not(not.value.transform)
 	}
 
-	public dispatch def Constraint transform(VariableReference ref) {
-		val boolVar = variableMapping.get(ref.value)
+	public dispatch def Constraint transform(KnightReference ref) {
+		val boolVar = variableMapping.get(ref.person)
 		and(boolVar)
+	}
+	
+	public dispatch def Constraint transform(KnaveReference ref) {
+		val boolVar = variableMapping.get(ref.person)
+		not(and(boolVar))
+	}
+	
+	public def String prettyprint(ESat bool) {
+		if(bool == ESat.TRUE)
+			return " is a knight"
+		else
+			return " is a knave"
 	}
 }

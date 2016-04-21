@@ -32,13 +32,13 @@ public interface LanguageFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Variable</em>'.
+   * Returns a new object of class '<em>Person</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
+   * @return a new object of class '<em>Person</em>'.
    * @generated
    */
-  Variable createVariable();
+  Person createPerson();
 
   /**
    * Returns a new object of class '<em>Statement</em>'.
@@ -86,22 +86,31 @@ public interface LanguageFactory extends EFactory
   And createAnd();
 
   /**
-   * Returns a new object of class '<em>Negation</em>'.
+   * Returns a new object of class '<em>Negationable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Negation</em>'.
+   * @return a new object of class '<em>Negationable</em>'.
    * @generated
    */
-  Negation createNegation();
+  Negationable createNegationable();
 
   /**
-   * Returns a new object of class '<em>Variable Reference</em>'.
+   * Returns a new object of class '<em>Knight Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Reference</em>'.
+   * @return a new object of class '<em>Knight Reference</em>'.
    * @generated
    */
-  VariableReference createVariableReference();
+  KnightReference createKnightReference();
+
+  /**
+   * Returns a new object of class '<em>Knave Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Knave Reference</em>'.
+   * @generated
+   */
+  KnaveReference createKnaveReference();
 
   /**
    * Returns the package supported by this factory.

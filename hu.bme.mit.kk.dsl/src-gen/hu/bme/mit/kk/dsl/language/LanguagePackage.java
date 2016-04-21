@@ -67,13 +67,13 @@ public interface LanguagePackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+   * The feature id for the '<em><b>People</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__VARIABLES = 0;
+  int MODEL__PEOPLE = 0;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -94,14 +94,14 @@ public interface LanguagePackage extends EPackage
   int MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.VariableImpl <em>Variable</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.PersonImpl <em>Person</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.kk.dsl.language.impl.VariableImpl
-   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getVariable()
+   * @see hu.bme.mit.kk.dsl.language.impl.PersonImpl
+   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getPerson()
    * @generated
    */
-  int VARIABLE = 1;
+  int PERSON = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -110,16 +110,16 @@ public interface LanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = 0;
+  int PERSON__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Variable</em>' class.
+   * The number of structural features of the '<em>Person</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = 1;
+  int PERSON_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.StatementImpl <em>Statement</em>}' class.
@@ -132,13 +132,13 @@ public interface LanguagePackage extends EPackage
   int STATEMENT = 2;
 
   /**
-   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * The feature id for the '<em><b>Person</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT__VARIABLE = 0;
+  int STATEMENT__PERSON = 0;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -289,14 +289,14 @@ public interface LanguagePackage extends EPackage
   int AND_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.NegationImpl <em>Negation</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.NegationableImpl <em>Negationable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.kk.dsl.language.impl.NegationImpl
-   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getNegation()
+   * @see hu.bme.mit.kk.dsl.language.impl.NegationableImpl
+   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getNegationable()
    * @generated
    */
-  int NEGATION = 7;
+  int NEGATIONABLE = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -305,44 +305,72 @@ public interface LanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int NEGATION__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+  int NEGATIONABLE__VALUE = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Negation</em>' class.
+   * The number of structural features of the '<em>Negationable</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NEGATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int NEGATIONABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.KnightReferenceImpl <em>Knight Reference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.kk.dsl.language.impl.VariableReferenceImpl
-   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getVariableReference()
+   * @see hu.bme.mit.kk.dsl.language.impl.KnightReferenceImpl
+   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getKnightReference()
    * @generated
    */
-  int VARIABLE_REFERENCE = 8;
+  int KNIGHT_REFERENCE = 8;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Variable Reference</em>' class.
+   * The feature id for the '<em><b>Person</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int KNIGHT_REFERENCE__PERSON = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Knight Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KNIGHT_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.kk.dsl.language.impl.KnaveReferenceImpl <em>Knave Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.kk.dsl.language.impl.KnaveReferenceImpl
+   * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getKnaveReference()
+   * @generated
+   */
+  int KNAVE_REFERENCE = 9;
+
+  /**
+   * The feature id for the '<em><b>Person</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KNAVE_REFERENCE__PERSON = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Knave Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KNAVE_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -356,15 +384,15 @@ public interface LanguagePackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.kk.dsl.language.Model#getVariables <em>Variables</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.kk.dsl.language.Model#getPeople <em>People</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variables</em>'.
-   * @see hu.bme.mit.kk.dsl.language.Model#getVariables()
+   * @return the meta object for the containment reference list '<em>People</em>'.
+   * @see hu.bme.mit.kk.dsl.language.Model#getPeople()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Variables();
+  EReference getModel_People();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.kk.dsl.language.Model#getStatements <em>Statements</em>}'.
@@ -378,25 +406,25 @@ public interface LanguagePackage extends EPackage
   EReference getModel_Statements();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.Variable <em>Variable</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.Person <em>Person</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable</em>'.
-   * @see hu.bme.mit.kk.dsl.language.Variable
+   * @return the meta object for class '<em>Person</em>'.
+   * @see hu.bme.mit.kk.dsl.language.Person
    * @generated
    */
-  EClass getVariable();
+  EClass getPerson();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.kk.dsl.language.Variable#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.kk.dsl.language.Person#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.kk.dsl.language.Variable#getName()
-   * @see #getVariable()
+   * @see hu.bme.mit.kk.dsl.language.Person#getName()
+   * @see #getPerson()
    * @generated
    */
-  EAttribute getVariable_Name();
+  EAttribute getPerson_Name();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.Statement <em>Statement</em>}'.
@@ -409,15 +437,15 @@ public interface LanguagePackage extends EPackage
   EClass getStatement();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.kk.dsl.language.Statement#getVariable <em>Variable</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.kk.dsl.language.Statement#getPerson <em>Person</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variable</em>'.
-   * @see hu.bme.mit.kk.dsl.language.Statement#getVariable()
+   * @return the meta object for the reference '<em>Person</em>'.
+   * @see hu.bme.mit.kk.dsl.language.Statement#getPerson()
    * @see #getStatement()
    * @generated
    */
-  EReference getStatement_Variable();
+  EReference getStatement_Person();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.kk.dsl.language.Statement#getExpression <em>Expression</em>}'.
@@ -537,46 +565,67 @@ public interface LanguagePackage extends EPackage
   EReference getAnd_Right();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.Negation <em>Negation</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.Negationable <em>Negationable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Negation</em>'.
-   * @see hu.bme.mit.kk.dsl.language.Negation
+   * @return the meta object for class '<em>Negationable</em>'.
+   * @see hu.bme.mit.kk.dsl.language.Negationable
    * @generated
    */
-  EClass getNegation();
+  EClass getNegationable();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.kk.dsl.language.Negation#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.kk.dsl.language.Negationable#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see hu.bme.mit.kk.dsl.language.Negation#getValue()
-   * @see #getNegation()
+   * @see hu.bme.mit.kk.dsl.language.Negationable#getValue()
+   * @see #getNegationable()
    * @generated
    */
-  EReference getNegation_Value();
+  EReference getNegationable_Value();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.VariableReference <em>Variable Reference</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.KnightReference <em>Knight Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Reference</em>'.
-   * @see hu.bme.mit.kk.dsl.language.VariableReference
+   * @return the meta object for class '<em>Knight Reference</em>'.
+   * @see hu.bme.mit.kk.dsl.language.KnightReference
    * @generated
    */
-  EClass getVariableReference();
+  EClass getKnightReference();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.kk.dsl.language.VariableReference#getValue <em>Value</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.kk.dsl.language.KnightReference#getPerson <em>Person</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Value</em>'.
-   * @see hu.bme.mit.kk.dsl.language.VariableReference#getValue()
-   * @see #getVariableReference()
+   * @return the meta object for the reference '<em>Person</em>'.
+   * @see hu.bme.mit.kk.dsl.language.KnightReference#getPerson()
+   * @see #getKnightReference()
    * @generated
    */
-  EReference getVariableReference_Value();
+  EReference getKnightReference_Person();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.kk.dsl.language.KnaveReference <em>Knave Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Knave Reference</em>'.
+   * @see hu.bme.mit.kk.dsl.language.KnaveReference
+   * @generated
+   */
+  EClass getKnaveReference();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.kk.dsl.language.KnaveReference#getPerson <em>Person</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Person</em>'.
+   * @see hu.bme.mit.kk.dsl.language.KnaveReference#getPerson()
+   * @see #getKnaveReference()
+   * @generated
+   */
+  EReference getKnaveReference_Person();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -612,12 +661,12 @@ public interface LanguagePackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>People</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__VARIABLES = eINSTANCE.getModel_Variables();
+    EReference MODEL__PEOPLE = eINSTANCE.getModel_People();
 
     /**
      * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
@@ -628,14 +677,14 @@ public interface LanguagePackage extends EPackage
     EReference MODEL__STATEMENTS = eINSTANCE.getModel_Statements();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.VariableImpl <em>Variable</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.PersonImpl <em>Person</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.kk.dsl.language.impl.VariableImpl
-     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getVariable()
+     * @see hu.bme.mit.kk.dsl.language.impl.PersonImpl
+     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getPerson()
      * @generated
      */
-    EClass VARIABLE = eINSTANCE.getVariable();
+    EClass PERSON = eINSTANCE.getPerson();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -643,7 +692,7 @@ public interface LanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+    EAttribute PERSON__NAME = eINSTANCE.getPerson_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.StatementImpl <em>Statement</em>}' class.
@@ -656,12 +705,12 @@ public interface LanguagePackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
-     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Person</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATEMENT__VARIABLE = eINSTANCE.getStatement_Variable();
+    EReference STATEMENT__PERSON = eINSTANCE.getStatement_Person();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -760,14 +809,14 @@ public interface LanguagePackage extends EPackage
     EReference AND__RIGHT = eINSTANCE.getAnd_Right();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.NegationImpl <em>Negation</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.NegationableImpl <em>Negationable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.kk.dsl.language.impl.NegationImpl
-     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getNegation()
+     * @see hu.bme.mit.kk.dsl.language.impl.NegationableImpl
+     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getNegationable()
      * @generated
      */
-    EClass NEGATION = eINSTANCE.getNegation();
+    EClass NEGATIONABLE = eINSTANCE.getNegationable();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -775,25 +824,43 @@ public interface LanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NEGATION__VALUE = eINSTANCE.getNegation_Value();
+    EReference NEGATIONABLE__VALUE = eINSTANCE.getNegationable_Value();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.KnightReferenceImpl <em>Knight Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.kk.dsl.language.impl.VariableReferenceImpl
-     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getVariableReference()
+     * @see hu.bme.mit.kk.dsl.language.impl.KnightReferenceImpl
+     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getKnightReference()
      * @generated
      */
-    EClass VARIABLE_REFERENCE = eINSTANCE.getVariableReference();
+    EClass KNIGHT_REFERENCE = eINSTANCE.getKnightReference();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Person</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE_REFERENCE__VALUE = eINSTANCE.getVariableReference_Value();
+    EReference KNIGHT_REFERENCE__PERSON = eINSTANCE.getKnightReference_Person();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.kk.dsl.language.impl.KnaveReferenceImpl <em>Knave Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.kk.dsl.language.impl.KnaveReferenceImpl
+     * @see hu.bme.mit.kk.dsl.language.impl.LanguagePackageImpl#getKnaveReference()
+     * @generated
+     */
+    EClass KNAVE_REFERENCE = eINSTANCE.getKnaveReference();
+
+    /**
+     * The meta object literal for the '<em><b>Person</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KNAVE_REFERENCE__PERSON = eINSTANCE.getKnaveReference_Person();
 
   }
 

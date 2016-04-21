@@ -80,9 +80,9 @@ public class LanguageAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseVariable(Variable object)
+      public Adapter casePerson(Person object)
       {
-        return createVariableAdapter();
+        return createPersonAdapter();
       }
       @Override
       public Adapter caseStatement(Statement object)
@@ -110,14 +110,19 @@ public class LanguageAdapterFactory extends AdapterFactoryImpl
         return createAndAdapter();
       }
       @Override
-      public Adapter caseNegation(Negation object)
+      public Adapter caseNegationable(Negationable object)
       {
-        return createNegationAdapter();
+        return createNegationableAdapter();
       }
       @Override
-      public Adapter caseVariableReference(VariableReference object)
+      public Adapter caseKnightReference(KnightReference object)
       {
-        return createVariableReferenceAdapter();
+        return createKnightReferenceAdapter();
+      }
+      @Override
+      public Adapter caseKnaveReference(KnaveReference object)
+      {
+        return createKnaveReferenceAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -157,16 +162,16 @@ public class LanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.Variable <em>Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.Person <em>Person</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.kk.dsl.language.Variable
+   * @see hu.bme.mit.kk.dsl.language.Person
    * @generated
    */
-  public Adapter createVariableAdapter()
+  public Adapter createPersonAdapter()
   {
     return null;
   }
@@ -247,31 +252,46 @@ public class LanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.Negation <em>Negation</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.Negationable <em>Negationable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.kk.dsl.language.Negation
+   * @see hu.bme.mit.kk.dsl.language.Negationable
    * @generated
    */
-  public Adapter createNegationAdapter()
+  public Adapter createNegationableAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.VariableReference <em>Variable Reference</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.KnightReference <em>Knight Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.kk.dsl.language.VariableReference
+   * @see hu.bme.mit.kk.dsl.language.KnightReference
    * @generated
    */
-  public Adapter createVariableReferenceAdapter()
+  public Adapter createKnightReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.kk.dsl.language.KnaveReference <em>Knave Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.kk.dsl.language.KnaveReference
+   * @generated
+   */
+  public Adapter createKnaveReferenceAdapter()
   {
     return null;
   }

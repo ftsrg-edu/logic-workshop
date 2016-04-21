@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.kk.dsl.language.impl.OrImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link hu.bme.mit.kk.dsl.language.impl.OrImpl#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -3,33 +3,36 @@ grammar hu.bme.mit.kk.dsl.Language with org.eclipse.xtext.common.Terminals
 generate language "http://www.bme.hu/mit/kk/dsl/Language"
 
 Model:
-	variables+=Variable (',' variables+=Variable)*
+	people+=Person ((',' people+=Person)* 'and' people+=Person) 'are on the island.'
 	statements+=(Statement)+;
 
-Variable:
+Person:
 	name=ID;
 
 Statement:
-	variable=[Variable] ':' expression=Expression;
+	person=[Person] 'says that' expression=Expression '.';
 
 Expression:
 	Iff;
 
 Iff returns Expression:
-	Or ({Iff.left=current} '==' right=Or)?;
+	Or ({Iff.left=current} 'if and only if' right=Or)?;
 
 Or returns Expression:
-	And ({Or.left=current} '||' right=And)*;
+	And ({Or.left=current} 'or' right=And)*;
 
 And returns Expression:
-	Negation ({And.left=current} '&&' right=Negation)*;
+	Negationable ({And.left=current} 'and' right=Negationable)*;
 
-Negation returns Expression:
-	'!' {Negation} value=Primary | Primary;
+Negationable returns Expression:
+	'but'? ('it is not true that' {Negationable} value=Primary | KnaveReference | Primary);
 
 Primary returns Expression:
-	VariableReference |
-	'(' Or ')';
+	KnightReference |
+	'(' Iff ')';
 
-VariableReference returns Expression:
-	{VariableReference} value=[Variable];
+KnightReference returns Expression:
+	{KnightReference} person=[Person] 'is a knight';
+	
+KnaveReference returns Expression:
+	{KnaveReference} person=[Person] 'is a knave';

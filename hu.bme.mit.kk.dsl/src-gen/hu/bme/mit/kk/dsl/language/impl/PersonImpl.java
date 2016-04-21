@@ -3,47 +3,56 @@
 package hu.bme.mit.kk.dsl.language.impl;
 
 import hu.bme.mit.kk.dsl.language.LanguagePackage;
-import hu.bme.mit.kk.dsl.language.Variable;
-import hu.bme.mit.kk.dsl.language.VariableReference;
+import hu.bme.mit.kk.dsl.language.Person;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable Reference</b></em>'.
+ * An implementation of the model object '<em><b>Person</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.impl.VariableReferenceImpl#getValue <em>Value</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.impl.PersonImpl#getName <em>Name</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class VariableReferenceImpl extends ExpressionImpl implements VariableReference
+public class PersonImpl extends MinimalEObjectImpl.Container implements Person
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Variable value;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariableReferenceImpl()
+  protected PersonImpl()
   {
     super();
   }
@@ -56,7 +65,7 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   @Override
   protected EClass eStaticClass()
   {
-    return LanguagePackage.Literals.VARIABLE_REFERENCE;
+    return LanguagePackage.Literals.PERSON;
   }
 
   /**
@@ -64,19 +73,9 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable getValue()
+  public String getName()
   {
-    if (value != null && value.eIsProxy())
-    {
-      InternalEObject oldValue = (InternalEObject)value;
-      value = (Variable)eResolveProxy(oldValue);
-      if (value != oldValue)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LanguagePackage.VARIABLE_REFERENCE__VALUE, oldValue, value));
-      }
-    }
-    return value;
+    return name;
   }
 
   /**
@@ -84,22 +83,12 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable basicGetValue()
+  public void setName(String newName)
   {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setValue(Variable newValue)
-  {
-    Variable oldValue = value;
-    value = newValue;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.VARIABLE_REFERENCE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.PERSON__NAME, oldName, name));
   }
 
   /**
@@ -112,9 +101,8 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE_REFERENCE__VALUE:
-        if (resolve) return getValue();
-        return basicGetValue();
+      case LanguagePackage.PERSON__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +117,8 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE_REFERENCE__VALUE:
-        setValue((Variable)newValue);
+      case LanguagePackage.PERSON__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +134,8 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE_REFERENCE__VALUE:
-        setValue((Variable)null);
+      case LanguagePackage.PERSON__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -163,10 +151,27 @@ public class VariableReferenceImpl extends ExpressionImpl implements VariableRef
   {
     switch (featureID)
     {
-      case LanguagePackage.VARIABLE_REFERENCE__VALUE:
-        return value != null;
+      case LanguagePackage.PERSON__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
 
-} //VariableReferenceImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
+
+} //PersonImpl

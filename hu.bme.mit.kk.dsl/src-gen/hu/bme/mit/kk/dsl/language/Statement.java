@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.kk.dsl.language.Statement#getVariable <em>Variable</em>}</li>
+ *   <li>{@link hu.bme.mit.kk.dsl.language.Statement#getPerson <em>Person</em>}</li>
  *   <li>{@link hu.bme.mit.kk.dsl.language.Statement#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getStatement()
  * @model
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Statement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Variable</b></em>' reference.
+   * Returns the value of the '<em><b>Person</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variable</em>' reference isn't clear,
+   * If the meaning of the '<em>Person</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable</em>' reference.
-   * @see #setVariable(Variable)
-   * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getStatement_Variable()
+   * @return the value of the '<em>Person</em>' reference.
+   * @see #setPerson(Person)
+   * @see hu.bme.mit.kk.dsl.language.LanguagePackage#getStatement_Person()
    * @model
    * @generated
    */
-  Variable getVariable();
+  Person getPerson();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.kk.dsl.language.Statement#getVariable <em>Variable</em>}' reference.
+   * Sets the value of the '{@link hu.bme.mit.kk.dsl.language.Statement#getPerson <em>Person</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable</em>' reference.
-   * @see #getVariable()
+   * @param value the new value of the '<em>Person</em>' reference.
+   * @see #getPerson()
    * @generated
    */
-  void setVariable(Variable value);
+  void setPerson(Person value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

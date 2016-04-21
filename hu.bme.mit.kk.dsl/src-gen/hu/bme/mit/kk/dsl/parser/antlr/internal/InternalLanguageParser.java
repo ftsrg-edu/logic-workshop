@@ -21,24 +21,29 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "':'", "'=='", "'||'", "'&&'", "'!'", "'('", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'and'", "'are on the island.'", "'says that'", "'.'", "'if and only if'", "'or'", "'but'", "'it is not true that'", "'('", "')'", "'is a knight'", "'is a knave'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
     public static final int RULE_STRING=6;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
-    public static final int RULE_INT=5;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=5;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -54,7 +59,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         
 
     public String[] getTokenNames() { return InternalLanguageParser.tokenNames; }
-    public String getGrammarFileName() { return "../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g"; }
+    public String getGrammarFileName() { return "InternalLanguage.g"; }
 
 
 
@@ -79,7 +84,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleModel"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:67:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
+    // InternalLanguage.g:67:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
     public final EObject entryRuleModel() throws RecognitionException {
         EObject current = null;
 
@@ -87,17 +92,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:68:2: (iv_ruleModel= ruleModel EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:69:2: iv_ruleModel= ruleModel EOF
+            // InternalLanguage.g:68:2: (iv_ruleModel= ruleModel EOF )
+            // InternalLanguage.g:69:2: iv_ruleModel= ruleModel EOF
             {
              newCompositeNode(grammarAccess.getModelRule()); 
-            pushFollow(FOLLOW_ruleModel_in_entryRuleModel75);
+            pushFollow(FOLLOW_1);
             iv_ruleModel=ruleModel();
 
             state._fsp--;
 
              current =iv_ruleModel; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModel85); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -115,38 +120,42 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:76:1: ruleModel returns [EObject current=null] : ( ( (lv_variables_0_0= ruleVariable ) ) (otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) ) )* ( (lv_statements_3_0= ruleStatement ) )+ ) ;
+    // InternalLanguage.g:76:1: ruleModel returns [EObject current=null] : ( ( (lv_people_0_0= rulePerson ) ) ( (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) ) ) otherlv_5= 'are on the island.' ( (lv_statements_6_0= ruleStatement ) )+ ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        EObject lv_variables_0_0 = null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        EObject lv_people_0_0 = null;
 
-        EObject lv_variables_2_0 = null;
+        EObject lv_people_2_0 = null;
 
-        EObject lv_statements_3_0 = null;
+        EObject lv_people_4_0 = null;
+
+        EObject lv_statements_6_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:79:28: ( ( ( (lv_variables_0_0= ruleVariable ) ) (otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) ) )* ( (lv_statements_3_0= ruleStatement ) )+ ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:80:1: ( ( (lv_variables_0_0= ruleVariable ) ) (otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) ) )* ( (lv_statements_3_0= ruleStatement ) )+ )
+            // InternalLanguage.g:79:28: ( ( ( (lv_people_0_0= rulePerson ) ) ( (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) ) ) otherlv_5= 'are on the island.' ( (lv_statements_6_0= ruleStatement ) )+ ) )
+            // InternalLanguage.g:80:1: ( ( (lv_people_0_0= rulePerson ) ) ( (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) ) ) otherlv_5= 'are on the island.' ( (lv_statements_6_0= ruleStatement ) )+ )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:80:1: ( ( (lv_variables_0_0= ruleVariable ) ) (otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) ) )* ( (lv_statements_3_0= ruleStatement ) )+ )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:80:2: ( (lv_variables_0_0= ruleVariable ) ) (otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) ) )* ( (lv_statements_3_0= ruleStatement ) )+
+            // InternalLanguage.g:80:1: ( ( (lv_people_0_0= rulePerson ) ) ( (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) ) ) otherlv_5= 'are on the island.' ( (lv_statements_6_0= ruleStatement ) )+ )
+            // InternalLanguage.g:80:2: ( (lv_people_0_0= rulePerson ) ) ( (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) ) ) otherlv_5= 'are on the island.' ( (lv_statements_6_0= ruleStatement ) )+
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:80:2: ( (lv_variables_0_0= ruleVariable ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:81:1: (lv_variables_0_0= ruleVariable )
+            // InternalLanguage.g:80:2: ( (lv_people_0_0= rulePerson ) )
+            // InternalLanguage.g:81:1: (lv_people_0_0= rulePerson )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:81:1: (lv_variables_0_0= ruleVariable )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:82:3: lv_variables_0_0= ruleVariable
+            // InternalLanguage.g:81:1: (lv_people_0_0= rulePerson )
+            // InternalLanguage.g:82:3: lv_people_0_0= rulePerson
             {
              
-            	        newCompositeNode(grammarAccess.getModelAccess().getVariablesVariableParserRuleCall_0_0()); 
+            	        newCompositeNode(grammarAccess.getModelAccess().getPeoplePersonParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleVariable_in_ruleModel131);
-            lv_variables_0_0=ruleVariable();
+            pushFollow(FOLLOW_3);
+            lv_people_0_0=rulePerson();
 
             state._fsp--;
 
@@ -156,9 +165,9 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
             	        }
                    		add(
                    			current, 
-                   			"variables",
-                    		lv_variables_0_0, 
-                    		"Variable");
+                   			"people",
+                    		lv_people_0_0, 
+                    		"hu.bme.mit.kk.dsl.Language.Person");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -167,7 +176,10 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:98:2: (otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) ) )*
+            // InternalLanguage.g:98:2: ( (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) ) )
+            // InternalLanguage.g:98:3: (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )* otherlv_3= 'and' ( (lv_people_4_0= rulePerson ) )
+            {
+            // InternalLanguage.g:98:3: (otherlv_1= ',' ( (lv_people_2_0= rulePerson ) ) )*
             loop1:
             do {
                 int alt1=2;
@@ -180,23 +192,23 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:98:4: otherlv_1= ',' ( (lv_variables_2_0= ruleVariable ) )
+            	    // InternalLanguage.g:98:5: otherlv_1= ',' ( (lv_people_2_0= rulePerson ) )
             	    {
-            	    otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleModel144); 
+            	    otherlv_1=(Token)match(input,11,FOLLOW_4); 
 
-            	        	newLeafNode(otherlv_1, grammarAccess.getModelAccess().getCommaKeyword_1_0());
+            	        	newLeafNode(otherlv_1, grammarAccess.getModelAccess().getCommaKeyword_1_0_0());
             	        
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:102:1: ( (lv_variables_2_0= ruleVariable ) )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:103:1: (lv_variables_2_0= ruleVariable )
+            	    // InternalLanguage.g:102:1: ( (lv_people_2_0= rulePerson ) )
+            	    // InternalLanguage.g:103:1: (lv_people_2_0= rulePerson )
             	    {
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:103:1: (lv_variables_2_0= ruleVariable )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:104:3: lv_variables_2_0= ruleVariable
+            	    // InternalLanguage.g:103:1: (lv_people_2_0= rulePerson )
+            	    // InternalLanguage.g:104:3: lv_people_2_0= rulePerson
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getModelAccess().getVariablesVariableParserRuleCall_1_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getModelAccess().getPeoplePersonParserRuleCall_1_0_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleModel165);
-            	    lv_variables_2_0=ruleVariable();
+            	    pushFollow(FOLLOW_3);
+            	    lv_people_2_0=rulePerson();
 
             	    state._fsp--;
 
@@ -206,9 +218,9 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"variables",
-            	            		lv_variables_2_0, 
-            	            		"Variable");
+            	           			"people",
+            	            		lv_people_2_0, 
+            	            		"hu.bme.mit.kk.dsl.Language.Person");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -226,7 +238,49 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:120:4: ( (lv_statements_3_0= ruleStatement ) )+
+            otherlv_3=(Token)match(input,12,FOLLOW_4); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getModelAccess().getAndKeyword_1_1());
+                
+            // InternalLanguage.g:124:1: ( (lv_people_4_0= rulePerson ) )
+            // InternalLanguage.g:125:1: (lv_people_4_0= rulePerson )
+            {
+            // InternalLanguage.g:125:1: (lv_people_4_0= rulePerson )
+            // InternalLanguage.g:126:3: lv_people_4_0= rulePerson
+            {
+             
+            	        newCompositeNode(grammarAccess.getModelAccess().getPeoplePersonParserRuleCall_1_2_0()); 
+            	    
+            pushFollow(FOLLOW_5);
+            lv_people_4_0=rulePerson();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getModelRule());
+            	        }
+                   		add(
+                   			current, 
+                   			"people",
+                    		lv_people_4_0, 
+                    		"hu.bme.mit.kk.dsl.Language.Person");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,13,FOLLOW_4); 
+
+                	newLeafNode(otherlv_5, grammarAccess.getModelAccess().getAreOnTheIslandKeyword_2());
+                
+            // InternalLanguage.g:146:1: ( (lv_statements_6_0= ruleStatement ) )+
             int cnt2=0;
             loop2:
             do {
@@ -240,16 +294,16 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:121:1: (lv_statements_3_0= ruleStatement )
+            	    // InternalLanguage.g:147:1: (lv_statements_6_0= ruleStatement )
             	    {
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:121:1: (lv_statements_3_0= ruleStatement )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:122:3: lv_statements_3_0= ruleStatement
+            	    // InternalLanguage.g:147:1: (lv_statements_6_0= ruleStatement )
+            	    // InternalLanguage.g:148:3: lv_statements_6_0= ruleStatement
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getModelAccess().getStatementsStatementParserRuleCall_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getModelAccess().getStatementsStatementParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStatement_in_ruleModel188);
-            	    lv_statements_3_0=ruleStatement();
+            	    pushFollow(FOLLOW_6);
+            	    lv_statements_6_0=ruleStatement();
 
             	    state._fsp--;
 
@@ -260,8 +314,8 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"statements",
-            	            		lv_statements_3_0, 
-            	            		"Statement");
+            	            		lv_statements_6_0, 
+            	            		"hu.bme.mit.kk.dsl.Language.Statement");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -300,26 +354,26 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleVariable"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:146:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
-    public final EObject entryRuleVariable() throws RecognitionException {
+    // $ANTLR start "entryRulePerson"
+    // InternalLanguage.g:172:1: entryRulePerson returns [EObject current=null] : iv_rulePerson= rulePerson EOF ;
+    public final EObject entryRulePerson() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleVariable = null;
+        EObject iv_rulePerson = null;
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:147:2: (iv_ruleVariable= ruleVariable EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:148:2: iv_ruleVariable= ruleVariable EOF
+            // InternalLanguage.g:173:2: (iv_rulePerson= rulePerson EOF )
+            // InternalLanguage.g:174:2: iv_rulePerson= rulePerson EOF
             {
-             newCompositeNode(grammarAccess.getVariableRule()); 
-            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable225);
-            iv_ruleVariable=ruleVariable();
+             newCompositeNode(grammarAccess.getPersonRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePerson=rulePerson();
 
             state._fsp--;
 
-             current =iv_ruleVariable; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable235); 
+             current =iv_rulePerson; 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -333,12 +387,12 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleVariable"
+    // $ANTLR end "entryRulePerson"
 
 
-    // $ANTLR start "ruleVariable"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:155:1: ruleVariable returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
-    public final EObject ruleVariable() throws RecognitionException {
+    // $ANTLR start "rulePerson"
+    // InternalLanguage.g:181:1: rulePerson returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject rulePerson() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
@@ -346,28 +400,28 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:158:28: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:159:1: ( (lv_name_0_0= RULE_ID ) )
+            // InternalLanguage.g:184:28: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalLanguage.g:185:1: ( (lv_name_0_0= RULE_ID ) )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:159:1: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:160:1: (lv_name_0_0= RULE_ID )
+            // InternalLanguage.g:185:1: ( (lv_name_0_0= RULE_ID ) )
+            // InternalLanguage.g:186:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:160:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:161:3: lv_name_0_0= RULE_ID
+            // InternalLanguage.g:186:1: (lv_name_0_0= RULE_ID )
+            // InternalLanguage.g:187:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable276); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            			newLeafNode(lv_name_0_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0()); 
+            			newLeafNode(lv_name_0_0, grammarAccess.getPersonAccess().getNameIDTerminalRuleCall_0()); 
             		
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getVariableRule());
+            	            current = createModelElement(grammarAccess.getPersonRule());
             	        }
                    		setWithLastConsumed(
                    			current, 
                    			"name",
                     		lv_name_0_0, 
-                    		"ID");
+                    		"org.eclipse.xtext.common.Terminals.ID");
             	    
 
             }
@@ -389,11 +443,11 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleVariable"
+    // $ANTLR end "rulePerson"
 
 
     // $ANTLR start "entryRuleStatement"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:185:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
+    // InternalLanguage.g:211:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
     public final EObject entryRuleStatement() throws RecognitionException {
         EObject current = null;
 
@@ -401,17 +455,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:186:2: (iv_ruleStatement= ruleStatement EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:187:2: iv_ruleStatement= ruleStatement EOF
+            // InternalLanguage.g:212:2: (iv_ruleStatement= ruleStatement EOF )
+            // InternalLanguage.g:213:2: iv_ruleStatement= ruleStatement EOF
             {
              newCompositeNode(grammarAccess.getStatementRule()); 
-            pushFollow(FOLLOW_ruleStatement_in_entryRuleStatement316);
+            pushFollow(FOLLOW_1);
             iv_ruleStatement=ruleStatement();
 
             state._fsp--;
 
              current =iv_ruleStatement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStatement326); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -429,38 +483,39 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatement"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:194:1: ruleStatement returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_expression_2_0= ruleExpression ) ) ) ;
+    // InternalLanguage.g:220:1: ruleStatement returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'says that' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= '.' ) ;
     public final EObject ruleStatement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
+        Token otherlv_3=null;
         EObject lv_expression_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:197:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_expression_2_0= ruleExpression ) ) ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:198:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_expression_2_0= ruleExpression ) ) )
+            // InternalLanguage.g:223:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'says that' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= '.' ) )
+            // InternalLanguage.g:224:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'says that' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= '.' )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:198:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_expression_2_0= ruleExpression ) ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:198:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= ':' ( (lv_expression_2_0= ruleExpression ) )
+            // InternalLanguage.g:224:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= 'says that' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= '.' )
+            // InternalLanguage.g:224:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= 'says that' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= '.'
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:198:2: ( (otherlv_0= RULE_ID ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:199:1: (otherlv_0= RULE_ID )
+            // InternalLanguage.g:224:2: ( (otherlv_0= RULE_ID ) )
+            // InternalLanguage.g:225:1: (otherlv_0= RULE_ID )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:199:1: (otherlv_0= RULE_ID )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:200:3: otherlv_0= RULE_ID
+            // InternalLanguage.g:225:1: (otherlv_0= RULE_ID )
+            // InternalLanguage.g:226:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getStatementRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStatement371); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
-            		newLeafNode(otherlv_0, grammarAccess.getStatementAccess().getVariableVariableCrossReference_0_0()); 
+            		newLeafNode(otherlv_0, grammarAccess.getStatementAccess().getPersonPersonCrossReference_0_0()); 
             	
 
             }
@@ -468,20 +523,20 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleStatement383); 
+            otherlv_1=(Token)match(input,14,FOLLOW_8); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getStatementAccess().getColonKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getStatementAccess().getSaysThatKeyword_1());
                 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:215:1: ( (lv_expression_2_0= ruleExpression ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:216:1: (lv_expression_2_0= ruleExpression )
+            // InternalLanguage.g:241:1: ( (lv_expression_2_0= ruleExpression ) )
+            // InternalLanguage.g:242:1: (lv_expression_2_0= ruleExpression )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:216:1: (lv_expression_2_0= ruleExpression )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:217:3: lv_expression_2_0= ruleExpression
+            // InternalLanguage.g:242:1: (lv_expression_2_0= ruleExpression )
+            // InternalLanguage.g:243:3: lv_expression_2_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getStatementAccess().getExpressionExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleStatement404);
+            pushFollow(FOLLOW_9);
             lv_expression_2_0=ruleExpression();
 
             state._fsp--;
@@ -494,7 +549,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"expression",
                     		lv_expression_2_0, 
-                    		"Expression");
+                    		"hu.bme.mit.kk.dsl.Language.Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -503,6 +558,10 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_3=(Token)match(input,15,FOLLOW_2); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getStatementAccess().getFullStopKeyword_3());
+                
 
             }
 
@@ -524,7 +583,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:241:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalLanguage.g:271:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -532,17 +591,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:242:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:243:2: iv_ruleExpression= ruleExpression EOF
+            // InternalLanguage.g:272:2: (iv_ruleExpression= ruleExpression EOF )
+            // InternalLanguage.g:273:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression440);
+            pushFollow(FOLLOW_1);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
 
              current =iv_ruleExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression450); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -560,7 +619,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:250:1: ruleExpression returns [EObject current=null] : this_Iff_0= ruleIff ;
+    // InternalLanguage.g:280:1: ruleExpression returns [EObject current=null] : this_Iff_0= ruleIff ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -570,13 +629,13 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:253:28: (this_Iff_0= ruleIff )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:255:5: this_Iff_0= ruleIff
+            // InternalLanguage.g:283:28: (this_Iff_0= ruleIff )
+            // InternalLanguage.g:285:5: this_Iff_0= ruleIff
             {
              
                     newCompositeNode(grammarAccess.getExpressionAccess().getIffParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleIff_in_ruleExpression496);
+            pushFollow(FOLLOW_2);
             this_Iff_0=ruleIff();
 
             state._fsp--;
@@ -603,7 +662,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIff"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:271:1: entryRuleIff returns [EObject current=null] : iv_ruleIff= ruleIff EOF ;
+    // InternalLanguage.g:301:1: entryRuleIff returns [EObject current=null] : iv_ruleIff= ruleIff EOF ;
     public final EObject entryRuleIff() throws RecognitionException {
         EObject current = null;
 
@@ -611,17 +670,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:272:2: (iv_ruleIff= ruleIff EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:273:2: iv_ruleIff= ruleIff EOF
+            // InternalLanguage.g:302:2: (iv_ruleIff= ruleIff EOF )
+            // InternalLanguage.g:303:2: iv_ruleIff= ruleIff EOF
             {
              newCompositeNode(grammarAccess.getIffRule()); 
-            pushFollow(FOLLOW_ruleIff_in_entryRuleIff530);
+            pushFollow(FOLLOW_1);
             iv_ruleIff=ruleIff();
 
             state._fsp--;
 
              current =iv_ruleIff; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIff540); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -639,7 +698,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIff"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:280:1: ruleIff returns [EObject current=null] : (this_Or_0= ruleOr ( () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) ) )? ) ;
+    // InternalLanguage.g:310:1: ruleIff returns [EObject current=null] : (this_Or_0= ruleOr ( () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) ) )? ) ;
     public final EObject ruleIff() throws RecognitionException {
         EObject current = null;
 
@@ -652,16 +711,16 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:283:28: ( (this_Or_0= ruleOr ( () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) ) )? ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:284:1: (this_Or_0= ruleOr ( () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) ) )? )
+            // InternalLanguage.g:313:28: ( (this_Or_0= ruleOr ( () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) ) )? ) )
+            // InternalLanguage.g:314:1: (this_Or_0= ruleOr ( () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) ) )? )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:284:1: (this_Or_0= ruleOr ( () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) ) )? )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:285:5: this_Or_0= ruleOr ( () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) ) )?
+            // InternalLanguage.g:314:1: (this_Or_0= ruleOr ( () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) ) )? )
+            // InternalLanguage.g:315:5: this_Or_0= ruleOr ( () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getIffAccess().getOrParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleOr_in_ruleIff587);
+            pushFollow(FOLLOW_10);
             this_Or_0=ruleOr();
 
             state._fsp--;
@@ -670,19 +729,19 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
                     current = this_Or_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:293:1: ( () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) ) )?
+            // InternalLanguage.g:323:1: ( () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==13) ) {
+            if ( (LA3_0==16) ) {
                 alt3=1;
             }
             switch (alt3) {
                 case 1 :
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:293:2: () otherlv_2= '==' ( (lv_right_3_0= ruleOr ) )
+                    // InternalLanguage.g:323:2: () otherlv_2= 'if and only if' ( (lv_right_3_0= ruleOr ) )
                     {
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:293:2: ()
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:294:5: 
+                    // InternalLanguage.g:323:2: ()
+                    // InternalLanguage.g:324:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -692,20 +751,20 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleIff608); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_8); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getIffAccess().getEqualsSignEqualsSignKeyword_1_1());
+                        	newLeafNode(otherlv_2, grammarAccess.getIffAccess().getIfAndOnlyIfKeyword_1_1());
                         
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:303:1: ( (lv_right_3_0= ruleOr ) )
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:304:1: (lv_right_3_0= ruleOr )
+                    // InternalLanguage.g:333:1: ( (lv_right_3_0= ruleOr ) )
+                    // InternalLanguage.g:334:1: (lv_right_3_0= ruleOr )
                     {
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:304:1: (lv_right_3_0= ruleOr )
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:305:3: lv_right_3_0= ruleOr
+                    // InternalLanguage.g:334:1: (lv_right_3_0= ruleOr )
+                    // InternalLanguage.g:335:3: lv_right_3_0= ruleOr
                     {
                      
                     	        newCompositeNode(grammarAccess.getIffAccess().getRightOrParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleOr_in_ruleIff629);
+                    pushFollow(FOLLOW_2);
                     lv_right_3_0=ruleOr();
 
                     state._fsp--;
@@ -718,7 +777,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
                            			current, 
                            			"right",
                             		lv_right_3_0, 
-                            		"Or");
+                            		"hu.bme.mit.kk.dsl.Language.Or");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -754,7 +813,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOr"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:329:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
+    // InternalLanguage.g:359:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
     public final EObject entryRuleOr() throws RecognitionException {
         EObject current = null;
 
@@ -762,17 +821,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:330:2: (iv_ruleOr= ruleOr EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:331:2: iv_ruleOr= ruleOr EOF
+            // InternalLanguage.g:360:2: (iv_ruleOr= ruleOr EOF )
+            // InternalLanguage.g:361:2: iv_ruleOr= ruleOr EOF
             {
              newCompositeNode(grammarAccess.getOrRule()); 
-            pushFollow(FOLLOW_ruleOr_in_entryRuleOr667);
+            pushFollow(FOLLOW_1);
             iv_ruleOr=ruleOr();
 
             state._fsp--;
 
              current =iv_ruleOr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOr677); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -790,7 +849,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOr"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:338:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* ) ;
+    // InternalLanguage.g:368:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) ) )* ) ;
     public final EObject ruleOr() throws RecognitionException {
         EObject current = null;
 
@@ -803,16 +862,16 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:341:28: ( (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:342:1: (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* )
+            // InternalLanguage.g:371:28: ( (this_And_0= ruleAnd ( () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) ) )* ) )
+            // InternalLanguage.g:372:1: (this_And_0= ruleAnd ( () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) ) )* )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:342:1: (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:343:5: this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )*
+            // InternalLanguage.g:372:1: (this_And_0= ruleAnd ( () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) ) )* )
+            // InternalLanguage.g:373:5: this_And_0= ruleAnd ( () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getOrAccess().getAndParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAnd_in_ruleOr724);
+            pushFollow(FOLLOW_11);
             this_And_0=ruleAnd();
 
             state._fsp--;
@@ -821,23 +880,23 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
                     current = this_And_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:351:1: ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )*
+            // InternalLanguage.g:381:1: ( () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==14) ) {
+                if ( (LA4_0==17) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:351:2: () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) )
+            	    // InternalLanguage.g:381:2: () otherlv_2= 'or' ( (lv_right_3_0= ruleAnd ) )
             	    {
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:351:2: ()
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:352:5: 
+            	    // InternalLanguage.g:381:2: ()
+            	    // InternalLanguage.g:382:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -847,20 +906,20 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleOr745); 
+            	    otherlv_2=(Token)match(input,17,FOLLOW_8); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getOrAccess().getVerticalLineVerticalLineKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getOrAccess().getOrKeyword_1_1());
             	        
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:361:1: ( (lv_right_3_0= ruleAnd ) )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:362:1: (lv_right_3_0= ruleAnd )
+            	    // InternalLanguage.g:391:1: ( (lv_right_3_0= ruleAnd ) )
+            	    // InternalLanguage.g:392:1: (lv_right_3_0= ruleAnd )
             	    {
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:362:1: (lv_right_3_0= ruleAnd )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:363:3: lv_right_3_0= ruleAnd
+            	    // InternalLanguage.g:392:1: (lv_right_3_0= ruleAnd )
+            	    // InternalLanguage.g:393:3: lv_right_3_0= ruleAnd
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getOrAccess().getRightAndParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAnd_in_ruleOr766);
+            	    pushFollow(FOLLOW_11);
             	    lv_right_3_0=ruleAnd();
 
             	    state._fsp--;
@@ -873,7 +932,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"And");
+            	            		"hu.bme.mit.kk.dsl.Language.And");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -912,7 +971,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnd"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:387:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
+    // InternalLanguage.g:417:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
     public final EObject entryRuleAnd() throws RecognitionException {
         EObject current = null;
 
@@ -920,17 +979,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:388:2: (iv_ruleAnd= ruleAnd EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:389:2: iv_ruleAnd= ruleAnd EOF
+            // InternalLanguage.g:418:2: (iv_ruleAnd= ruleAnd EOF )
+            // InternalLanguage.g:419:2: iv_ruleAnd= ruleAnd EOF
             {
              newCompositeNode(grammarAccess.getAndRule()); 
-            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd804);
+            pushFollow(FOLLOW_1);
             iv_ruleAnd=ruleAnd();
 
             state._fsp--;
 
              current =iv_ruleAnd; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd814); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -948,12 +1007,12 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnd"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:396:1: ruleAnd returns [EObject current=null] : (this_Negation_0= ruleNegation ( () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) ) )* ) ;
+    // InternalLanguage.g:426:1: ruleAnd returns [EObject current=null] : (this_Negationable_0= ruleNegationable ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) ) )* ) ;
     public final EObject ruleAnd() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_Negation_0 = null;
+        EObject this_Negationable_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -961,41 +1020,41 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:399:28: ( (this_Negation_0= ruleNegation ( () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) ) )* ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:400:1: (this_Negation_0= ruleNegation ( () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) ) )* )
+            // InternalLanguage.g:429:28: ( (this_Negationable_0= ruleNegationable ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) ) )* ) )
+            // InternalLanguage.g:430:1: (this_Negationable_0= ruleNegationable ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) ) )* )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:400:1: (this_Negation_0= ruleNegation ( () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) ) )* )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:401:5: this_Negation_0= ruleNegation ( () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) ) )*
+            // InternalLanguage.g:430:1: (this_Negationable_0= ruleNegationable ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) ) )* )
+            // InternalLanguage.g:431:5: this_Negationable_0= ruleNegationable ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getAndAccess().getNegationParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getAndAccess().getNegationableParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleNegation_in_ruleAnd861);
-            this_Negation_0=ruleNegation();
+            pushFollow(FOLLOW_12);
+            this_Negationable_0=ruleNegationable();
 
             state._fsp--;
 
              
-                    current = this_Negation_0; 
+                    current = this_Negationable_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:409:1: ( () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) ) )*
+            // InternalLanguage.g:439:1: ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) ) )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==15) ) {
+                if ( (LA5_0==12) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:409:2: () otherlv_2= '&&' ( (lv_right_3_0= ruleNegation ) )
+            	    // InternalLanguage.g:439:2: () otherlv_2= 'and' ( (lv_right_3_0= ruleNegationable ) )
             	    {
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:409:2: ()
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:410:5: 
+            	    // InternalLanguage.g:439:2: ()
+            	    // InternalLanguage.g:440:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -1005,21 +1064,21 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleAnd882); 
+            	    otherlv_2=(Token)match(input,12,FOLLOW_8); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getAndAccess().getAmpersandAmpersandKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getAndAccess().getAndKeyword_1_1());
             	        
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:419:1: ( (lv_right_3_0= ruleNegation ) )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:420:1: (lv_right_3_0= ruleNegation )
+            	    // InternalLanguage.g:449:1: ( (lv_right_3_0= ruleNegationable ) )
+            	    // InternalLanguage.g:450:1: (lv_right_3_0= ruleNegationable )
             	    {
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:420:1: (lv_right_3_0= ruleNegation )
-            	    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:421:3: lv_right_3_0= ruleNegation
+            	    // InternalLanguage.g:450:1: (lv_right_3_0= ruleNegationable )
+            	    // InternalLanguage.g:451:3: lv_right_3_0= ruleNegationable
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getAndAccess().getRightNegationParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getAndAccess().getRightNegationableParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleNegation_in_ruleAnd903);
-            	    lv_right_3_0=ruleNegation();
+            	    pushFollow(FOLLOW_12);
+            	    lv_right_3_0=ruleNegationable();
 
             	    state._fsp--;
 
@@ -1031,7 +1090,7 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"Negation");
+            	            		"hu.bme.mit.kk.dsl.Language.Negationable");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -1069,26 +1128,26 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAnd"
 
 
-    // $ANTLR start "entryRuleNegation"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:445:1: entryRuleNegation returns [EObject current=null] : iv_ruleNegation= ruleNegation EOF ;
-    public final EObject entryRuleNegation() throws RecognitionException {
+    // $ANTLR start "entryRuleNegationable"
+    // InternalLanguage.g:475:1: entryRuleNegationable returns [EObject current=null] : iv_ruleNegationable= ruleNegationable EOF ;
+    public final EObject entryRuleNegationable() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleNegation = null;
+        EObject iv_ruleNegationable = null;
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:446:2: (iv_ruleNegation= ruleNegation EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:447:2: iv_ruleNegation= ruleNegation EOF
+            // InternalLanguage.g:476:2: (iv_ruleNegationable= ruleNegationable EOF )
+            // InternalLanguage.g:477:2: iv_ruleNegationable= ruleNegationable EOF
             {
-             newCompositeNode(grammarAccess.getNegationRule()); 
-            pushFollow(FOLLOW_ruleNegation_in_entryRuleNegation941);
-            iv_ruleNegation=ruleNegation();
+             newCompositeNode(grammarAccess.getNegationableRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNegationable=ruleNegationable();
 
             state._fsp--;
 
-             current =iv_ruleNegation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNegation951); 
+             current =iv_ruleNegationable; 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -1102,87 +1161,136 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleNegation"
+    // $ANTLR end "entryRuleNegationable"
 
 
-    // $ANTLR start "ruleNegation"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:454:1: ruleNegation returns [EObject current=null] : ( (otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) ) ) | this_Primary_3= rulePrimary ) ;
-    public final EObject ruleNegation() throws RecognitionException {
+    // $ANTLR start "ruleNegationable"
+    // InternalLanguage.g:484:1: ruleNegationable returns [EObject current=null] : ( (otherlv_0= 'but' )? ( (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) ) | this_KnaveReference_4= ruleKnaveReference | this_Primary_5= rulePrimary ) ) ;
+    public final EObject ruleNegationable() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject lv_value_2_0 = null;
+        Token otherlv_1=null;
+        EObject lv_value_3_0 = null;
 
-        EObject this_Primary_3 = null;
+        EObject this_KnaveReference_4 = null;
+
+        EObject this_Primary_5 = null;
 
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:457:28: ( ( (otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) ) ) | this_Primary_3= rulePrimary ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:458:1: ( (otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) ) ) | this_Primary_3= rulePrimary )
+            // InternalLanguage.g:487:28: ( ( (otherlv_0= 'but' )? ( (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) ) | this_KnaveReference_4= ruleKnaveReference | this_Primary_5= rulePrimary ) ) )
+            // InternalLanguage.g:488:1: ( (otherlv_0= 'but' )? ( (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) ) | this_KnaveReference_4= ruleKnaveReference | this_Primary_5= rulePrimary ) )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:458:1: ( (otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) ) ) | this_Primary_3= rulePrimary )
+            // InternalLanguage.g:488:1: ( (otherlv_0= 'but' )? ( (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) ) | this_KnaveReference_4= ruleKnaveReference | this_Primary_5= rulePrimary ) )
+            // InternalLanguage.g:488:2: (otherlv_0= 'but' )? ( (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) ) | this_KnaveReference_4= ruleKnaveReference | this_Primary_5= rulePrimary )
+            {
+            // InternalLanguage.g:488:2: (otherlv_0= 'but' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==16) ) {
+            if ( (LA6_0==18) ) {
                 alt6=1;
-            }
-            else if ( (LA6_0==RULE_ID||LA6_0==17) ) {
-                alt6=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
-
-                throw nvae;
             }
             switch (alt6) {
                 case 1 :
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:458:2: (otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) ) )
+                    // InternalLanguage.g:488:4: otherlv_0= 'but'
                     {
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:458:2: (otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) ) )
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:458:4: otherlv_0= '!' () ( (lv_value_2_0= rulePrimary ) )
-                    {
-                    otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleNegation989); 
+                    otherlv_0=(Token)match(input,18,FOLLOW_8); 
 
-                        	newLeafNode(otherlv_0, grammarAccess.getNegationAccess().getExclamationMarkKeyword_0_0());
+                        	newLeafNode(otherlv_0, grammarAccess.getNegationableAccess().getButKeyword_0());
                         
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:462:1: ()
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:463:5: 
+
+                    }
+                    break;
+
+            }
+
+            // InternalLanguage.g:492:3: ( (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) ) | this_KnaveReference_4= ruleKnaveReference | this_Primary_5= rulePrimary )
+            int alt7=3;
+            switch ( input.LA(1) ) {
+            case 19:
+                {
+                alt7=1;
+                }
+                break;
+            case RULE_ID:
+                {
+                int LA7_2 = input.LA(2);
+
+                if ( (LA7_2==23) ) {
+                    alt7=2;
+                }
+                else if ( (LA7_2==22) ) {
+                    alt7=3;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 7, 2, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 20:
+                {
+                alt7=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt7) {
+                case 1 :
+                    // InternalLanguage.g:492:4: (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) )
+                    {
+                    // InternalLanguage.g:492:4: (otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) ) )
+                    // InternalLanguage.g:492:6: otherlv_1= 'it is not true that' () ( (lv_value_3_0= rulePrimary ) )
+                    {
+                    otherlv_1=(Token)match(input,19,FOLLOW_8); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getNegationableAccess().getItIsNotTrueThatKeyword_1_0_0());
+                        
+                    // InternalLanguage.g:496:1: ()
+                    // InternalLanguage.g:497:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getNegationAccess().getNegationAction_0_1(),
+                                grammarAccess.getNegationableAccess().getNegationableAction_1_0_1(),
                                 current);
                         
 
                     }
 
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:468:2: ( (lv_value_2_0= rulePrimary ) )
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:469:1: (lv_value_2_0= rulePrimary )
+                    // InternalLanguage.g:502:2: ( (lv_value_3_0= rulePrimary ) )
+                    // InternalLanguage.g:503:1: (lv_value_3_0= rulePrimary )
                     {
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:469:1: (lv_value_2_0= rulePrimary )
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:470:3: lv_value_2_0= rulePrimary
+                    // InternalLanguage.g:503:1: (lv_value_3_0= rulePrimary )
+                    // InternalLanguage.g:504:3: lv_value_3_0= rulePrimary
                     {
                      
-                    	        newCompositeNode(grammarAccess.getNegationAccess().getValuePrimaryParserRuleCall_0_2_0()); 
+                    	        newCompositeNode(grammarAccess.getNegationableAccess().getValuePrimaryParserRuleCall_1_0_2_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePrimary_in_ruleNegation1019);
-                    lv_value_2_0=rulePrimary();
+                    pushFollow(FOLLOW_2);
+                    lv_value_3_0=rulePrimary();
 
                     state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getNegationRule());
+                    	            current = createModelElementForParent(grammarAccess.getNegationableRule());
                     	        }
                            		set(
                            			current, 
                            			"value",
-                            		lv_value_2_0, 
-                            		"Primary");
+                            		lv_value_3_0, 
+                            		"hu.bme.mit.kk.dsl.Language.Primary");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1198,23 +1306,44 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:488:5: this_Primary_3= rulePrimary
+                    // InternalLanguage.g:522:5: this_KnaveReference_4= ruleKnaveReference
                     {
                      
-                            newCompositeNode(grammarAccess.getNegationAccess().getPrimaryParserRuleCall_1()); 
+                            newCompositeNode(grammarAccess.getNegationableAccess().getKnaveReferenceParserRuleCall_1_1()); 
                         
-                    pushFollow(FOLLOW_rulePrimary_in_ruleNegation1048);
-                    this_Primary_3=rulePrimary();
+                    pushFollow(FOLLOW_2);
+                    this_KnaveReference_4=ruleKnaveReference();
 
                     state._fsp--;
 
                      
-                            current = this_Primary_3; 
+                            current = this_KnaveReference_4; 
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
+                case 3 :
+                    // InternalLanguage.g:532:5: this_Primary_5= rulePrimary
+                    {
+                     
+                            newCompositeNode(grammarAccess.getNegationableAccess().getPrimaryParserRuleCall_1_2()); 
+                        
+                    pushFollow(FOLLOW_2);
+                    this_Primary_5=rulePrimary();
+
+                    state._fsp--;
+
+                     
+                            current = this_Primary_5; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -1232,11 +1361,11 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleNegation"
+    // $ANTLR end "ruleNegationable"
 
 
     // $ANTLR start "entryRulePrimary"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:504:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // InternalLanguage.g:548:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -1244,17 +1373,17 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:505:2: (iv_rulePrimary= rulePrimary EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:506:2: iv_rulePrimary= rulePrimary EOF
+            // InternalLanguage.g:549:2: (iv_rulePrimary= rulePrimary EOF )
+            // InternalLanguage.g:550:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
-            pushFollow(FOLLOW_rulePrimary_in_entryRulePrimary1083);
+            pushFollow(FOLLOW_1);
             iv_rulePrimary=rulePrimary();
 
             state._fsp--;
 
              current =iv_rulePrimary; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimary1093); 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -1272,81 +1401,81 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimary"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:513:1: rulePrimary returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference | (otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')' ) ) ;
+    // InternalLanguage.g:557:1: rulePrimary returns [EObject current=null] : (this_KnightReference_0= ruleKnightReference | (otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')' ) ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        EObject this_VariableReference_0 = null;
+        EObject this_KnightReference_0 = null;
 
-        EObject this_Or_2 = null;
+        EObject this_Iff_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:516:28: ( (this_VariableReference_0= ruleVariableReference | (otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')' ) ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:517:1: (this_VariableReference_0= ruleVariableReference | (otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')' ) )
+            // InternalLanguage.g:560:28: ( (this_KnightReference_0= ruleKnightReference | (otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')' ) ) )
+            // InternalLanguage.g:561:1: (this_KnightReference_0= ruleKnightReference | (otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')' ) )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:517:1: (this_VariableReference_0= ruleVariableReference | (otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')' ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalLanguage.g:561:1: (this_KnightReference_0= ruleKnightReference | (otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')' ) )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_ID) ) {
-                alt7=1;
+            if ( (LA8_0==RULE_ID) ) {
+                alt8=1;
             }
-            else if ( (LA7_0==17) ) {
-                alt7=2;
+            else if ( (LA8_0==20) ) {
+                alt8=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:518:5: this_VariableReference_0= ruleVariableReference
+                    // InternalLanguage.g:562:5: this_KnightReference_0= ruleKnightReference
                     {
                      
-                            newCompositeNode(grammarAccess.getPrimaryAccess().getVariableReferenceParserRuleCall_0()); 
+                            newCompositeNode(grammarAccess.getPrimaryAccess().getKnightReferenceParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleVariableReference_in_rulePrimary1140);
-                    this_VariableReference_0=ruleVariableReference();
+                    pushFollow(FOLLOW_2);
+                    this_KnightReference_0=ruleKnightReference();
 
                     state._fsp--;
 
                      
-                            current = this_VariableReference_0; 
+                            current = this_KnightReference_0; 
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:527:6: (otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')' )
+                    // InternalLanguage.g:571:6: (otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')' )
                     {
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:527:6: (otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')' )
-                    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:527:8: otherlv_1= '(' this_Or_2= ruleOr otherlv_3= ')'
+                    // InternalLanguage.g:571:6: (otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')' )
+                    // InternalLanguage.g:571:8: otherlv_1= '(' this_Iff_2= ruleIff otherlv_3= ')'
                     {
-                    otherlv_1=(Token)match(input,17,FOLLOW_17_in_rulePrimary1158); 
+                    otherlv_1=(Token)match(input,20,FOLLOW_8); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
                         
                      
-                            newCompositeNode(grammarAccess.getPrimaryAccess().getOrParserRuleCall_1_1()); 
+                            newCompositeNode(grammarAccess.getPrimaryAccess().getIffParserRuleCall_1_1()); 
                         
-                    pushFollow(FOLLOW_ruleOr_in_rulePrimary1180);
-                    this_Or_2=ruleOr();
+                    pushFollow(FOLLOW_13);
+                    this_Iff_2=ruleIff();
 
                     state._fsp--;
 
                      
-                            current = this_Or_2; 
+                            current = this_Iff_2; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_rulePrimary1191); 
+                    otherlv_3=(Token)match(input,21,FOLLOW_2); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_1_2());
                         
@@ -1376,26 +1505,26 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePrimary"
 
 
-    // $ANTLR start "entryRuleVariableReference"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:552:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
-    public final EObject entryRuleVariableReference() throws RecognitionException {
+    // $ANTLR start "entryRuleKnightReference"
+    // InternalLanguage.g:596:1: entryRuleKnightReference returns [EObject current=null] : iv_ruleKnightReference= ruleKnightReference EOF ;
+    public final EObject entryRuleKnightReference() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleVariableReference = null;
+        EObject iv_ruleKnightReference = null;
 
 
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:553:2: (iv_ruleVariableReference= ruleVariableReference EOF )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:554:2: iv_ruleVariableReference= ruleVariableReference EOF
+            // InternalLanguage.g:597:2: (iv_ruleKnightReference= ruleKnightReference EOF )
+            // InternalLanguage.g:598:2: iv_ruleKnightReference= ruleKnightReference EOF
             {
-             newCompositeNode(grammarAccess.getVariableReferenceRule()); 
-            pushFollow(FOLLOW_ruleVariableReference_in_entryRuleVariableReference1228);
-            iv_ruleVariableReference=ruleVariableReference();
+             newCompositeNode(grammarAccess.getKnightReferenceRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleKnightReference=ruleKnightReference();
 
             state._fsp--;
 
-             current =iv_ruleVariableReference; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableReference1238); 
+             current =iv_ruleKnightReference; 
+            match(input,EOF,FOLLOW_2); 
 
             }
 
@@ -1409,50 +1538,51 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleVariableReference"
+    // $ANTLR end "entryRuleKnightReference"
 
 
-    // $ANTLR start "ruleVariableReference"
-    // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:561:1: ruleVariableReference returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) ) ;
-    public final EObject ruleVariableReference() throws RecognitionException {
+    // $ANTLR start "ruleKnightReference"
+    // InternalLanguage.g:605:1: ruleKnightReference returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knight' ) ;
+    public final EObject ruleKnightReference() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
+        Token otherlv_2=null;
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:564:28: ( ( () ( (otherlv_1= RULE_ID ) ) ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:565:1: ( () ( (otherlv_1= RULE_ID ) ) )
+            // InternalLanguage.g:608:28: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knight' ) )
+            // InternalLanguage.g:609:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knight' )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:565:1: ( () ( (otherlv_1= RULE_ID ) ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:565:2: () ( (otherlv_1= RULE_ID ) )
+            // InternalLanguage.g:609:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knight' )
+            // InternalLanguage.g:609:2: () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knight'
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:565:2: ()
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:566:5: 
+            // InternalLanguage.g:609:2: ()
+            // InternalLanguage.g:610:5: 
             {
 
                     current = forceCreateModelElement(
-                        grammarAccess.getVariableReferenceAccess().getVariableReferenceAction_0(),
+                        grammarAccess.getKnightReferenceAccess().getKnightReferenceAction_0(),
                         current);
                 
 
             }
 
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:571:2: ( (otherlv_1= RULE_ID ) )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:572:1: (otherlv_1= RULE_ID )
+            // InternalLanguage.g:615:2: ( (otherlv_1= RULE_ID ) )
+            // InternalLanguage.g:616:1: (otherlv_1= RULE_ID )
             {
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:572:1: (otherlv_1= RULE_ID )
-            // ../hu.bme.mit.kk.dsl/src-gen/hu/bme/mit/kk/dsl/parser/antlr/internal/InternalLanguage.g:573:3: otherlv_1= RULE_ID
+            // InternalLanguage.g:616:1: (otherlv_1= RULE_ID )
+            // InternalLanguage.g:617:3: otherlv_1= RULE_ID
             {
 
             			if (current==null) {
-            	            current = createModelElement(grammarAccess.getVariableReferenceRule());
+            	            current = createModelElement(grammarAccess.getKnightReferenceRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableReference1292); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_14); 
 
-            		newLeafNode(otherlv_1, grammarAccess.getVariableReferenceAccess().getValueVariableCrossReference_1_0()); 
+            		newLeafNode(otherlv_1, grammarAccess.getKnightReferenceAccess().getPersonPersonCrossReference_1_0()); 
             	
 
             }
@@ -1460,6 +1590,10 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_2=(Token)match(input,22,FOLLOW_2); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getKnightReferenceAccess().getIsAKnightKeyword_2());
+                
 
             }
 
@@ -1477,58 +1611,136 @@ public class InternalLanguageParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleVariableReference"
+    // $ANTLR end "ruleKnightReference"
+
+
+    // $ANTLR start "entryRuleKnaveReference"
+    // InternalLanguage.g:640:1: entryRuleKnaveReference returns [EObject current=null] : iv_ruleKnaveReference= ruleKnaveReference EOF ;
+    public final EObject entryRuleKnaveReference() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleKnaveReference = null;
+
+
+        try {
+            // InternalLanguage.g:641:2: (iv_ruleKnaveReference= ruleKnaveReference EOF )
+            // InternalLanguage.g:642:2: iv_ruleKnaveReference= ruleKnaveReference EOF
+            {
+             newCompositeNode(grammarAccess.getKnaveReferenceRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleKnaveReference=ruleKnaveReference();
+
+            state._fsp--;
+
+             current =iv_ruleKnaveReference; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleKnaveReference"
+
+
+    // $ANTLR start "ruleKnaveReference"
+    // InternalLanguage.g:649:1: ruleKnaveReference returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knave' ) ;
+    public final EObject ruleKnaveReference() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+
+         enterRule(); 
+            
+        try {
+            // InternalLanguage.g:652:28: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knave' ) )
+            // InternalLanguage.g:653:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knave' )
+            {
+            // InternalLanguage.g:653:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knave' )
+            // InternalLanguage.g:653:2: () ( (otherlv_1= RULE_ID ) ) otherlv_2= 'is a knave'
+            {
+            // InternalLanguage.g:653:2: ()
+            // InternalLanguage.g:654:5: 
+            {
+
+                    current = forceCreateModelElement(
+                        grammarAccess.getKnaveReferenceAccess().getKnaveReferenceAction_0(),
+                        current);
+                
+
+            }
+
+            // InternalLanguage.g:659:2: ( (otherlv_1= RULE_ID ) )
+            // InternalLanguage.g:660:1: (otherlv_1= RULE_ID )
+            {
+            // InternalLanguage.g:660:1: (otherlv_1= RULE_ID )
+            // InternalLanguage.g:661:3: otherlv_1= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getKnaveReferenceRule());
+            	        }
+                    
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_15); 
+
+            		newLeafNode(otherlv_1, grammarAccess.getKnaveReferenceAccess().getPersonPersonCrossReference_1_0()); 
+            	
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,23,FOLLOW_2); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getKnaveReferenceAccess().getIsAKnaveKeyword_2());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleKnaveReference"
 
     // Delegated rules
 
 
  
 
-    public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleModel131 = new BitSet(new long[]{0x0000000000000810L});
-    public static final BitSet FOLLOW_11_in_ruleModel144 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleModel165 = new BitSet(new long[]{0x0000000000000810L});
-    public static final BitSet FOLLOW_ruleStatement_in_ruleModel188 = new BitSet(new long[]{0x0000000000000812L});
-    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable225 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariable235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement316 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStatement326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStatement371 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleStatement383 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleStatement404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression440 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIff_in_ruleExpression496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIff_in_entryRuleIff530 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIff540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_ruleIff587 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_13_in_ruleIff608 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_ruleOr_in_ruleIff629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr667 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOr677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_ruleOr724 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleOr745 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_ruleAnd_in_ruleOr766 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd804 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAnd814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegation_in_ruleAnd861 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleAnd882 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_ruleNegation_in_ruleAnd903 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ruleNegation_in_entryRuleNegation941 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNegation951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleNegation989 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_rulePrimary_in_ruleNegation1019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_ruleNegation1048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_entryRulePrimary1083 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimary1093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_rulePrimary1140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rulePrimary1158 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_ruleOr_in_rulePrimary1180 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_rulePrimary1191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_entryRuleVariableReference1228 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableReference1238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableReference1292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000001C0010L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800000L});
 
 }

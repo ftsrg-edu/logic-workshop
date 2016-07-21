@@ -93,7 +93,7 @@ A \leftrightarrow (\neg A \vee \neg B)
 ~
 
 ~ Equation
-((A \wedge \neg A) \vee (A \wedge \neg B)) \vee (\neg A \wedge \neg(A \wedge B))
+((A \wedge \neg A) \vee (A \wedge \neg B)) \vee (\neg A \wedge (A \wedge B))
 ~
 
 ~ Equation

@@ -11,17 +11,22 @@ public class Main {
 	public static void main(String[] args) {
 		Solver solver = new Solver();
 
+		// A (B) is a knight <-> A (B) is true
 		BoolVar a = VariableFactory.bool("A", solver);
 		BoolVar b = VariableFactory.bool("B", solver);
 
+		// Statement: one of us is a knave
 		Constraint c = LogicalConstraintFactory.or(a.not(), b.not());
+		
+		// Constraints: the statement is true or false depending on the person's identity 
 		LogicalConstraintFactory.ifThen(a, c);
-		LogicalConstraintFactory.ifThen(a.not(),
-				LogicalConstraintFactory.not(c));
+		LogicalConstraintFactory.ifThen(a.not(), c.getOpposite());
 
-		if (solver.findSolution()) {
+		boolean solutionFound = solver.findSolution();
+		
+		if (solutionFound) {
 			do {
-				System.out.println("Result");
+				System.out.println("--- Result ---");
 				System.out.println(a.getBooleanValue() == ESat.TRUE ? "A is a knight" : "A is a knave");
 				System.out.println(b.getBooleanValue() == ESat.TRUE ? "B is a knight" : "B is a knave");
 			} while (solver.nextSolution());

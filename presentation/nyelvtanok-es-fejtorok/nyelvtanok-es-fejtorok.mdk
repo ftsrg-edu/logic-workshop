@@ -1,0 +1,269 @@
+[INCLUDE=presentation]
+Title         : Nyelvtanok és fejtörők
+Sub Title     : 
+Author        : Debreceni Csaba, Semeráth Oszkár, Szárnyas Gábor, Varró Dániel
+Affiliation   : Hibatűrő Rendszerek Kutatócsoport
+Reveal Theme  : simple
+MathJax       : https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+ldquo         : &bdquo;
+
+[TITLE]
+
+## 
+
+![mi-a-cime-ennek-a-konyvnek]
+
+[mi-a-cime-ennek-a-konyvnek]: images/mi-a-cime-ennek-a-konyvnek.jpg "mi-a-cime-ennek-a-konyvnek" { width=auto max-width=90% }
+
+## Logikai rejtvények
+
+* "**lovagok** és **lókötők**" szigete
+* eredeti nyelven **knights** and **knaves**.
+
+![knight-and-knaves]
+
+[knight-and-knaves]: images/knight-and-knaves.jpg "knight-and-knaves" { width=50% }
+
+## Feladványok
+
+### 1. feladvány
+
+
+~ Begin Framed
+"**A**" a következőt állítja: "Legalább egyikünk lókötő".
+~ End Framed
+
+### 2. feladvány
+
+~ Begin Framed
+Tegyük fel, hogy **A** ezt mondja: 
+
+"Lókötő vagyok, vagy **B** lovag."
+
+Miféle **A**, ill. **B**?
+~ End Framed
+
+## Logikai alapműveletek
+
+* nem: $\neg A$
+* és: $A \wedge B$ 
+* vagy: $A \vee B$
+* implikáció: $A \rightarrow B$
+* ekvivalencia: $A \leftrightarrow B$
+
+~ Begin Vertical
+## 1. feladvány {#vertical}
+
+<!-- Smullyan 28. feladat -->
+
+~ Begin Framed
+"**A**" a következőt állítja: "Legalább egyikünk lókötő".
+~ End Framed
+
+## 1. feladvány (megoldás) {#vertical}
+
+~ Begin Framed
+"**A**" a következőt állítja: "Legalább egyikünk lókötő".
+~ End Framed
+
+Legyen az $A$ predikátum pontosan akkor igaz, ha **A** lovag és $B$ pontosan akkor igaz, ha **B** lovag.
+
+Ekkor $\neg A$ igaz, ha **A** lókötő és $\neg B$ igaz, ha **B** lókötő.
+
+**A** állítása formálisan:
+
+~ Equation {#f1-allitas}
+\neg A \vee \neg B
+~
+
+Ha **A** lovag, igazat mond, különben hazudik, tehát az $A$ predikátum igazságtartalma megegyezik az [#f1-allitas] állításéval:
+
+~ Equation
+A \leftrightarrow (\neg A \vee \neg B)
+~
+
+## 1. feladvány (megoldás)
+
+~ Equation
+A \leftrightarrow (\neg A \vee \neg B)
+~
+
+~ Equation
+(A \wedge (\neg A \vee \neg B)) \vee (\neg A \wedge \neg(\neg A \vee \neg B)) 
+~
+
+~ Equation
+((A \wedge \neg A) \vee (A \wedge \neg B)) \vee (\neg A \wedge (A \wedge B))
+~
+
+~ Equation
+A \wedge \neg B
+~
+
+$A$ igaz és $B$ hamis, tehát **A** lovag és **B** lókötő.
+~ End Vertical
+
+~ Begin Vertical
+## 2. feladvány {#vertical}
+
+<!-- Smullyan 29. feladat -->
+
+~ Begin Framed
+Tegyük fel, hogy **A** ezt mondja: 
+
+"Lókötő vagyok, vagy **B** lovag."
+
+Miféle **A**, ill. **B**?
+~ End Framed
+
+## 2. feladvány (megoldás) {#vertical}
+
+~ Begin Framed
+Tegyük fel, hogy **A** ezt mondja: 
+
+"Lókötő vagyok, vagy **B** lovag."
+
+Miféle **A**, ill. **B**?
+~ End Framed
+
+**A** mondata formálisan:
+
+~ Equation {#f2-allitas}
+\neg A \vee B
+~
+
+Tehát a kifejezés:
+
+~ Equation
+A \leftrightarrow (\neg A \vee B)
+~
+
+## 2. feladvány (megoldás)
+
+~ Equation
+A \leftrightarrow (\neg A \vee B) 
+~
+
+~ Equation
+(A \wedge (\neg A \vee B)) \vee (\neg A \wedge \neg(\neg A \vee B))  
+~
+
+~ Equation
+((A \wedge \neg A) \vee (A \wedge B)) \vee (\neg A \wedge (A \wedge \neg B))  
+~
+
+~ Equation
+A \wedge B  
+~
+
+$A$ igaz és $B$ igaz, tehát **A** és **B** mindketten lovagok.
+~End Vertical
+
+~ Begin Vertical
+## 3. feladvány {#vertical}
+
+<!-- Smullyan 33. feladat -->
+
+~ Begin Framed
+**A**: Én lókötő vagyok, de **B** nem az.
+~ End Framed
+
+## 3. feladvány (megoldás)  {#vertical}
+
+~ Begin Framed
+**A**: Én lókötő vagyok, de **B** nem az.
+~ End Framed
+
+~ Equation
+\neg A \wedge B
+~
+
+## 3. feladvány (megoldás)
+
+~ Equation
+\neg A \wedge \neg B
+~
+
+**A** és **B** mindketten lókötők.
+~ End Vertical
+
+~ Begin Vertical
+## 4. feladvány {#vertical}
+
+<!-- Smullyan 31. feladat -->
+
+~ Begin Framed
+* **A**: Mindnyájan lókötők vagyunk.
+* **B**: Pontosan egy lovag van köztünk.
+* Miféle **A**, **B** és **C**?
+~ End Framed
+
+## 4. feladvány (megoldás)
+
+~ Begin Framed
+* **A**: Mindnyájan lókötők vagyunk.
+* **B**: Pontosan egy lovag van köztünk.
+* Miféle **A**, **B** és **C**?
+~ End Framed
+
+* A: $ \neg A \wedge \neg B \wedge \neg C $
+* B: $(A \wedge \neg B \wedge \neg C) \vee (\neg A \wedge B \wedge \neg C) \vee (\neg A \wedge \neg B \wedge C)$
+
+## 4. feladvány (megoldás)
+
+* A: $ \neg A \wedge \neg B \wedge \neg C $
+* B: $(A \wedge \neg B \wedge \neg C) \vee (\neg A \wedge B \wedge \neg C) \vee (\neg A \wedge \neg B \wedge C)$
+
+**A** lókötő, **B** lovag, **C** lókötő.
+~ End Vertical
+
+## A megoldás algoritmizálható
+
+![automate-this]
+
+[automate-this]: images/automate-this.png "automate-this" { width=auto max-width=70% }
+
+## Solverek
+
+Logikai kifejezések megoldására léteznek függvénykönyvtárak.
+
+* SAT (Boolean satisfiability)
+* CSP (constraint satisfaction program)
+* LP (linear programming)
+* IP (integer programming)
+
+Cél: a feladat és az algoritmus szétválasztása. 
+
+## Choco
+
+Java nyelvű solver.
+
+<http://choco-solver.org/>
+
+## Xtext
+
+Szöveges nyelvtanok készítésére alkalmas keretrendszer.
+
+<https://eclipse.org/Xtext/>
+
+## Mit láttunk?
+
+* Definiáltunk egy **szakterület-specifikus** nyelvet.
+* Ehhez "kaptunk" szerkesztőt is.
+
+## SAT problémák
+
+* Gráfszínezés
+* 8 királynő probléma
+* Sudoku
+* Tesztelés
+* Áramkörtervezés 
+
+## Összefoglalás
+
+* Logikai feladványok ~ programozás
+* Problémaleírás és algoritmus szétválasztása
+* Saját nyelv készítése nem olyan nehéz
+
+## $\Omega$
+
